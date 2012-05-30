@@ -1,6 +1,58 @@
 <p id="notice"><%= notice %></p>
 
-<%= @user.username%>
+    <div class="container">
+	
+	  <div class="row">
+	
+		<div class="span8">
 
-<%= link_to 'Edit', edit_users_path(@user) %> |
-<%= link_to 'Back', users_path %>
+
+	
+		<div class="span1">
+		  <p> </p>
+		</div>	
+		<div class="span6">
+		 		<div class="btn-toolbar">
+	        	<div class="btn-group">
+	            <button class="btn btn-mini">Filter your content</button>
+	            <button class="btn btn-mini dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></button>
+	          	<ul class="dropdown-menu">
+	            	<li><a href="#">Latest</a></li>
+	            	<li><a href="#">Most Commented</a></li>
+	            	<li><a href="#">Highest Rated</a></li>
+		        </ul>
+	            </div><!-- /btn-group -->
+	            </div><!-- /btn-toolbar -->
+		</div>
+	<div class="span1">
+	  <p> 1.</p>
+	</div>	
+	<div class="span6">
+	  <h3 class="title"><a>Pizza attempt #24: hopefully it works</a> </h3>
+	  <p><img src="http://placehold.it/15x15" alt=""> <small>by dananielcraig on 12/08/12. (+21 thumbs up/ 50 comments)</small> </p>
+	</div>
+
+
+	<div class="span1">
+	  <p> 2.</p>
+	</div>	
+	<div class="span6">
+	  <h3 class="title"><a>Pizza attempt #24: hopefully it works what it is fam. check this out</a> </h3>
+	  <p><small>by dananielcraig on 12/08/12. (+21 thumbs up/ 50 comments)</small></p>
+	</div>
+	
+	
+	
+	
+	
+	</div>
+
+
+
+
+<%= render :partial => 'show_right_menu_logged_in' if user_signed_in? and check_user_permission(params[:id], current_user) %>
+ <%= render :partial => 'show_right_menu_public' if !user_signed_in? %>
+
+</div> 
+    </div> 
+    </div> 

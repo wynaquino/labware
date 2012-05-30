@@ -1,6 +1,10 @@
 class UsersController < ApplicationController
   # GET /users
   # GET /users.json
+  
+ # before_filter :authenticate_user!, :except => [:index, :show]
+  layout "devise"
+  
   def index
     @users = User.all
 
@@ -21,9 +25,10 @@ class UsersController < ApplicationController
     end
   end
 
+
   # GET /users/new
   # GET /users/new.json
-=begin  
+ 
   def new
     @user = User.new
 
@@ -32,7 +37,7 @@ class UsersController < ApplicationController
       format.json { render json: @user }
     end
   end
-=end
+
   # GET /users/1/edit
   def edit
     @user = User.find(params[:id])
@@ -40,7 +45,7 @@ class UsersController < ApplicationController
 
   # POST /users
   # POST /users.json
-=begin
+
   def create
     @user = User.new(params[:user])
 
@@ -54,7 +59,7 @@ class UsersController < ApplicationController
       end
     end
   end
-=end
+
   # PUT /users/1
   # PUT /users/1.json
   def update
@@ -82,4 +87,5 @@ class UsersController < ApplicationController
       format.json { head :no_content }
     end
   end
+
 end
