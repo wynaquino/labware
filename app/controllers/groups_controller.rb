@@ -4,7 +4,8 @@ class GroupsController < ApplicationController
 
   layout "devise"
   before_filter :authenticate_user!, :except => [:index, :show]
-
+  around_filter :catch_not_found, :except => [:index, :new]
+  
   def index
     @groups = Group.all
 
@@ -18,11 +19,14 @@ class GroupsController < ApplicationController
   # GET /groups/1.json
   def show
     @group = Group.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @group }
+    
+    if @group.is_private == 'no'
+      #format.html # show.html.erb
+      #format.json { render json: @group }
+    else
+      redirect_to root_path, notice: 'Group is private. Try sending the owner a message.'
     end
+    
   end
 
   # GET /groups/new
@@ -38,8 +42,10 @@ class GroupsController < ApplicationController
 
   # GET /groups/1/edit
   def edit
-    @group = Group.find(params[:id])
-  end
+    #@group = Group.find(params[:id])
+    @group = current_user.groups.find(params[:id])
+ 
+    end
 
   # POST /groups
   # POST /groups.json
@@ -51,7 +57,7 @@ class GroupsController < ApplicationController
 
     respond_to do |format|
       if @group.save
-        format.html { redirect_to @group, notice: 'Group was successfully created.' }
+        format.html { redirect_to user_path(current_user), notice: 'Group was successfully created.' }
         format.json { render json: @group, status: :created, location: @group }
       else
         format.html { render action: "new" }
@@ -63,28 +69,44 @@ class GroupsController < ApplicationController
   # PUT /groups/1
   # PUT /groups/1.json
   def update
-    @group = Group.find(params[:id])
+    #@group = Group.find(params[:id])
+    @group = current_user.groups.find(params[:id])
 
     respond_to do |format|
       if @group.update_attributes(params[:group])
-        format.html { redirect_to @group, notice: 'Group was successfully updated.' }
+        #format.html { redirect_to @group, notice: 'Group was successfully updated.' }
+        format.html { redirect_to user_path(current_user), notice: 'Group was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
         format.json { render json: @group.errors, status: :unprocessable_entity }
       end
     end
+    
   end
 
   # DELETE /groups/1
   # DELETE /groups/1.json
   def destroy
-    @group = Group.find(params[:id])
+    #@group = Group.find(params[:id])
+    @group = current_user.groups.find(params[:id])
     @group.destroy
 
     respond_to do |format|
-      format.html { redirect_to groups_url }
+      #format.html { redirect_to groups_url }
+      format.html { redirect_to user_path(current_user), notice: 'Group was successfully removed.' }
       format.json { head :no_content }
     end
   end
+  
+  private
+
+  def catch_not_found
+      yield 
+    rescue ActiveRecord::RecordNotFound 
+      redirect_to user_path(current_user), :flash => { :notice => "Record not found." }
+  end
+
+  
+  
 end
