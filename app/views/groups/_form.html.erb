@@ -20,9 +20,26 @@
 
   <%= f.label :about %>
   <%= f.text_area :about%>
+  
 
+   	<div class="controls">
+     <label class="checkbox">
+		<%= f.check_box :is_private %>
+      Is this group private?
+     </label>
+   </div>
 
-   
+	<% if user_signed_in? %>
+	<% if current_user.id == 1%>
+	<div class="controls">
+     <label class="checkbox">
+		<%= f.check_box :frontpage %>
+      watch this on the front page?
+     </label>
+   </div>
+	<% end %>
+	<% end %>
+
 
 
   <div class="actions">

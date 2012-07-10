@@ -1,0 +1,79 @@
+<p id="notice"><%= notice %></p>
+
+
+	
+	<div class="span7">
+
+ <h3 class="title"><%= link_to @post.title, group_post_path(params[:group_id], @post) %> </h3>
+	  <p><small><%= link_to @post.group.name, group_path(@post.group)%>    <%= distance_of_time_in_words_to_now(@post.created_at)  %> ago by <%= link_to @post.user.username, user_path(@post.user) %> (+21 thumbs up/ 50 comments)</small></p>	
+	
+    <%= sanitize(textilize(@post.content)) %>
+    
+	
+	</div></div>
+	
+
+
+  <div class="row">
+			<div class="span4">	  
+
+		        <div class="well"> 
+<p><small> created <%= distance_of_time_in_words_to_now(@group.created_at)  %> ago by <%= link_to @group.user.username, user_path(@group.user) %></small></p>
+
+					<h2><%= link_to @group.name, group_path(@group) %>		
+	
+	<% if user_signed_in? %>
+	<% if @group.user_id == current_user.id %>
+			<%= link_to edit_group_path(@group) do %>
+				  <i class="icon-edit"></i>
+			<% end %>
+	<% end %>		
+	<% end %>
+	
+	</h2>
+					
+					<p><%= @group.about%></p>
+				
+					
+			</div>
+				
+				
+				<p>	<%=link_to "Comment", group_path(@group), :class => "btn"%> 
+				
+	<% if user_signed_in? %>
+	
+	<% if @post.user_id == current_user.id %>
+<%=link_to "Edit post", edit_group_post_path(@group, @post), :class => "btn"%>
+	<% end %>	<% end %>
+					</p>
+				
+				
+
+				
+				
+				
+				
+		          <a href="#">
+		            <img src="http://placehold.it/40x40" alt="">
+		          </a>
+		          <a href="#">
+		            <img src="http://placehold.it/40x40" alt="">
+		          </a>
+				  <a href="#">
+		            <img src="http://placehold.it/40x40" alt="">
+		          </a><a href="#">
+		            <img src="http://placehold.it/40x40" alt="">
+		          </a><a href="#">
+		            <img src="http://placehold.it/40x40" alt="">
+		          </a><a href="#">
+		            <img src="http://placehold.it/40x40" alt="">
+		          </a>
+
+
+
+
+	        </div>
+
+
+
+

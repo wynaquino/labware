@@ -5,9 +5,21 @@ module ApplicationHelper
       return true
     else
       return false
-    end
-    
+    end 
   end
   
+  def getGroupsToolbar
+    @groups = Group.find(:all, :order => "created_at ASC", :limit => 5)
+    return  @groups
+  end
+  
+  def title
+    base_title = "Labware"
+    if @title.nil?
+      base_title
+    else
+      "#{base_title} | #{@title}"
+    end
+  end
   
 end

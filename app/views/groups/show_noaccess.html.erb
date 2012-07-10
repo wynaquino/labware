@@ -1,0 +1,70 @@
+
+
+
+
+
+		<div class="span1">
+		  <p> </p>
+		</div>	
+		<div class="span6">
+		 		<div class="btn-toolbar">
+	        	<div class="btn-group">
+	           
+	            </div><!-- /btn-group -->
+	            </div><!-- /btn-toolbar -->
+		</div>
+	
+	
+	
+	
+
+	
+	<div class="span1">
+
+	</div>	
+
+	<div class="span6">
+
+ <h3>Group is set to private, try sending a message to the owner... </h3>
+
+	</div>
+	
+
+
+
+
+
+</div>
+
+  <div class="row">
+			<div class="span4">	  
+
+		        <div class="well"> 
+<p><small> created <%= distance_of_time_in_words_to_now(@group.created_at)  %> ago by <%= link_to @group.user.username, user_path(@group.user) %></small></p>
+					<h2><%= @group.name %>		
+	
+	<% if user_signed_in? %>
+	<% if @group.user_id == current_user.id %>
+			<%= link_to edit_group_path(@group) do %>
+				  <i class="icon-edit"></i>
+			<% end %>
+	<% end %>
+	<% end %>
+			</h2>
+					
+					<p><%= @group.about%></p>
+					
+					
+			</div>
+				
+				
+			
+
+
+
+
+	        </div>
+
+
+
+

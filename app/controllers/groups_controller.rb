@@ -2,7 +2,7 @@ class GroupsController < ApplicationController
   # GET /groups
   # GET /groups.json
 
-  layout "devise"
+  #layout "devise"
   before_filter :authenticate_user!, :except => [:index, :show]
   around_filter :catch_not_found, :except => [:index, :new]
   
@@ -15,18 +15,36 @@ class GroupsController < ApplicationController
     end
   end
 
+
+
+
   # GET /groups/1
   # GET /groups/1.json
   def show
     @group = Group.find(params[:id])
     
-    if @group.is_private == 'no'
-      #format.html # show.html.erb
-      #format.json { render json: @group }
-    else
-      redirect_to root_path, notice: 'Group is private. Try sending the owner a message.'
+   if user_signed_in?
+      if @group.is_private == true and current_user.id == @group.user_id
+        return
+      end
+      
+      if @group.is_private == true and current_user.id != @group.user_id
+        render "show_noaccess"
+      end
     end
-    
+
+    if !user_signed_in?
+      if @group.is_private == false
+      
+      end
+      
+      if @group.is_private == true 
+        render "show_noaccess"
+      end
+    end
+
+
+        
   end
 
   # GET /groups/new
@@ -75,7 +93,7 @@ class GroupsController < ApplicationController
     respond_to do |format|
       if @group.update_attributes(params[:group])
         #format.html { redirect_to @group, notice: 'Group was successfully updated.' }
-        format.html { redirect_to user_path(current_user), notice: 'Group was successfully updated.' }
+        format.html { redirect_to group_path(@group), notice: 'Group was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

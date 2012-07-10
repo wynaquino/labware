@@ -1,14 +1,6 @@
 
 
 
-    <div class="container">
-		<p id="notice"><%= notice %></p>
-	
-	 
-	
-	  <div class="row">
-	
-		<div class="span8">
 			<div class="span1">
 			  <p> </p>
 			</div>	
@@ -27,22 +19,36 @@
 			</div>
 		
 		
-		<div class="span1">
-		  <p> 1.</p>
-		</div>	
-		<div class="span6">
-		  <h3 class="title"><a>Pizza attempt #24: hopefully it works</a> </h3>
-		  <p><small>by dananielcraig on 12/08/12. (+21 thumbs up/ 50 comments)</small></p>
-		</div>
+			<% @num = 1%>	
+
+			 <% for post in @posts %>	
+
+				<div class="span1">
+				  <p><small> <%= @num %> | +21 </small>
+
+					<% if !post.link.blank? %>
+
+						<a href="http://<%= post.link %>" i class="icon-share" target="_blank"></a>
+
+
+					<% end %>
+
+					</p>
+				</div>	
+
+				<div class="span6">
+
+			 <h3 class="title"><%= link_to post.title, group_post_path(post.group, post) %> </h3>
+				  <p><small><%= link_to post.group.name, group_path(post.group)%> | <%= distance_of_time_in_words_to_now(post.created_at)  %> ago by <%= link_to post.user.username, user_path(post.user) %> (+21 thumbs up/ 50 comments)</small></p>	
+
+				</div>
+				 <% @num += 1  %>
+
+			<% end %>
+
 	
 	
-		<div class="span1">
-		  <p> 2.</p>
-		</div>	
-		<div class="span6">
-		  <h3 class="title"><a>Pizza attempt #24: hopefully it works what it is fam. check this out</a> </h3>
-		  <p><small>by dananielcraig on 12/08/12. (+21 thumbs up/ 50 comments)</small></p>
-		</div>
+
 	
 	
 	
@@ -53,7 +59,7 @@
 	  <div class="row">
 				<div class="span4">	  
 
- 			        <div class="well"> <p><b>Welcome to OnoLabs!</b> community driven with straight content son</p></div>
+ 			        <div class="well"> <p><b>Welcome to Labware,</b> a place to create and share content.</p></div>
 					
 					
 					
@@ -77,13 +83,4 @@
 
 
 		        </div>
-      </div>
-
-
-
-</div> 
-
-
-
-
-    </div> 
+   

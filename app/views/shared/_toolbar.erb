@@ -1,13 +1,43 @@
+<ul class="nav">
+  <% @groups = getGroupsToolbar %>
+
+ <% for g in @groups %>
+ <li >
+ <%= link_to g.name, group_path(g), :class => "''"%></li>
+ 
+<% end %>
+ 
+
+</ul>
+
+
+
 	    <ul class="nav pull-right">        
 
 
 <% if user_signed_in? %>
+
+<li class="dropdown">
+     <a class="dropdown-toggle" data-toggle="dropdown" href="#">Sections <b class="caret"></b></a>
+     <ul class="dropdown-menu">
+	  <li><%= link_to "Create section", new_group_path %> </li>
+       <li><a href="#navbar">Navbar</a></li>
+       <li><a href="#breadcrumbs">Breadcrumbs</a></li>
+       <li><a href="#pagination">Pagination</a></li>
+     </ul>
+   </li>
+
+
+
+
+
 				 <li class="dropdown">
 		  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Account <b class="caret"></b></a>
   <ul class="dropdown-menu">
       <li><%= link_to "Home", user_path(current_user)%></li>
       <li><%= link_to "Edit settings", edit_user_path(current_user)%></li>
-
+	  <li><%= link_to "Create section", new_group_path %> </li>
+    
 <li class="divider"></li>
 
       <li>  <%= link_to "Sign out", destroy_user_session_path, :method => :delete %> </li>

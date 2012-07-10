@@ -1,0 +1,75 @@
+
+  <% if @post.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+      <ul>
+      <% @post.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+  <ul id="myTab" class="nav nav-tabs">
+    <li class="active"><a href="#content" data-toggle="tab">Content</a></li>
+    <li><a href="#profile" data-toggle="tab">Add Link?</a></li>
+  </ul>
+  <div id="myTabContent" class="tab-content">
+    <div class="tab-pane fade in active" id="content">
+
+	  	<%= f.label :title %>
+	  <%= f.text_field :title, :class => "field span8" %>
+
+
+
+
+	  <%= f.label :content %>
+	  <%= f.text_area :content, :class => "field span8"%>
+
+    </div>
+    <div class="tab-pane fade" id="profile">
+      	<%= f.label :link %>
+	  <%= f.text_field :link, :class => "field span8" %>
+    </div>
+ 
+  </div>
+
+
+
+
+<br/>
+
+  <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseThree">
+   more options
+  </a>
+			
+
+
+          <div id="collapseThree" class="accordion-body collapse">
+	
+            <div class="accordion-inner">
+				  <label class="checkbox">
+					  <%= f.check_box :is_draft %>
+				Save this post as a draft?  </label>
+
+				  <label class="checkbox">
+					  <%= f.check_box :is_locked %>
+				Lock this post so no one can comment it?  </label>
+
+				  <label class="checkbox">
+					  <%= f.check_box :is_sticky %>
+				Sticky this post?  </label>
+            </div>
+          </div>
+
+          <div class="form-actions">
+           <%= f.submit "Submit", :class => 'btn' %> - 
+         <%= link_to "Cancel", group_path(params[:group_id])%>
+          </div>
+
+
+
+
+		

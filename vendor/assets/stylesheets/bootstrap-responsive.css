@@ -171,7 +171,7 @@
   .row-fluid [class*="span"] {
     display: block;
     float: none;
-    width: auto;
+    width: 400;
     margin-left: 0;
   }
   .input-large,

@@ -2,10 +2,10 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-  <title>Labware</title>
+  <title><%= title %></title>
+<%= csrf_meta_tag %>
   <%= stylesheet_link_tag    "application", "bootstrap", "bootstrap-responsive", :media => "all" %>
   <%= javascript_include_tag "application", "bootstrap-typeahead", "bootstrap-carousel", "bootstrap-collapse", "bootstrap-button", "bootstrap-popover", "bootstrap-tooltip", "bootstrap-tab", "bootstrap-scrollspy", "bootstrap-dropdown", "bootstrap-modal", "bootstrap-alert", "bootstrap-transition", "jquery" %>
-  <%= csrf_meta_tags %>
 
     <!-- Le styles -->
     <style>
@@ -19,7 +19,6 @@
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 
- 
   </head>
 
   <body>
@@ -32,13 +31,19 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </a>
-          <a class="brand" href= '<%=  root_path %>'> OnoLabs</a>
+          <a class="brand" href= '<%=  root_path %>'> Labware</a>
          
 
 
 
 
  <div class="nav-collapse">
+
+
+
+ 
+
+
 
 <%= render :partial => 'shared/toolbar'%>
 		
@@ -53,8 +58,29 @@
 
 
 
+	<div class="container">
+			<p id="notice"><%= notice %></p>
+
+
+
+		  <div class="row">
+
+			<div class="span8">
+
+
 
 	<%= yield %>
+
+
+		</div>
+		</div>
+		</div>
+		
+
+
+
+
+ <%= render :partial => 'shared/footer' %>
 
 
   </body>

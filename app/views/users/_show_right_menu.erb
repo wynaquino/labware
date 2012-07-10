@@ -1,0 +1,47 @@
+	  <div class="row">
+				<div class="span4">	  
+			        <div class="well"> 	
+	
+	
+	<h4><b><%= @user.username %></b><small> <%= distance_of_time_in_words_to_now(@user.last_sign_in_at) %></small>  </h4> 
+	<p> <%= @user.about%></p>
+	<p> status message</p>	
+		
+	
+	<h4>photos   <i class="icon-plus-sign"></i>   </h4> 
+	<a href="#">
+       <img src="http://placehold.it/40x40" alt="">
+     </a>	
+	</div>
+					
+<div class="row">			
+	<div class="span4">	  
+		 <div class="well">
+											<h4>sections</h4>										
+										      <ul>
+										    
+				<% for g in @user.groups %>
+					<li> <%= link_to g.name.capitalize, group_path(g)  %>
+						<img src="http://placehold.it/15x15" alt="">																		
+					</li>	   
+									     <% end %>
+									</ul>
+				</div>
+			</div>
+		</div>
+
+
+	 <div class="row">
+			<div class="span4">	  
+     <div class="well">
+											<h4>messages </h4>
+										<p><u>ryan says</u>...Hey whats up, been following. can you add me to the pizza group? (2 days ago) <i class="icon-remove"></i></p>     
+								
+										<textarea id="textarea" class="input-large" rows="3"></textarea>
+										<button class="btn" type="submit">Send message</button>				
+				</div>
+			</div>
+		</div>
+
+		        </div>
+     </div>

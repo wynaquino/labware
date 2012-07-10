@@ -1,0 +1,7 @@
+<h1>New post</h1>
+
+<%= form_for [@group, @post], :url => group_posts_url do |f| %>
+
+<%= render 'form', :f => f %>
+
+<% end %>

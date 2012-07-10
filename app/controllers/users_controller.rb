@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   # GET /users.json
   
  # before_filter :authenticate_user!, :except => [:index, :show]
-  layout "devise"
+ # layout "devise"
   
   def index
     @users = User.all
