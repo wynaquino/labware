@@ -10,8 +10,10 @@ class PostsController < ApplicationController
   
   def show
     @post = Post.find(params[:id])
-    @group = Group.find(params[:group_id])
-
+    @group = Group.find_by_url(params[:group_id])
+    
+   # @group = Group.find(@post.group_id)
+    
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @post }
@@ -45,7 +47,7 @@ class PostsController < ApplicationController
     
     respond_to do |format|
       if @post.save
-        format.html { redirect_to group_path(@group.id), notice: 'Post was successfully created.' }
+        format.html { redirect_to group_path(@group), notice: 'Post was successfully created.' }
         format.json { render json: @post, status: :created, location: @post }
       else
         format.html { render action: "new" }

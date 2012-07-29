@@ -37,7 +37,7 @@ describe PublicController do
   
   describe "Testing a public user clicking accessing a private post" do
       it "should be private" do
-        visit 'http://localhost:3000/groups/6'
+        visit 'http://localhost:3000/groups/new-section'
         page.should have_content "Group is set to private"
       end
   end

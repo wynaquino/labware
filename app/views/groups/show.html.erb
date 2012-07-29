@@ -6,54 +6,13 @@
 		<div class="span1">
 		  <p> </p>
 		</div>	
-		<div class="span6">
-		 		<div class="btn-toolbar">
-	        	<div class="btn-group">
-	            <button class="btn btn-mini">Filter</button>
-	            <button class="btn btn-mini dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></button>
-	          	<ul class="dropdown-menu">
-	            	<li><a href="#">By posted date</a></li>
-	            	<li><a href="#">Most commented</a></li>
-	            	<li><a href="#">Highest rated</a></li>
-	            	<li><a href="#">Last updated</a></li>
-	            	<li><a href="#">Most viewed</a></li>
-	
-	
-		        </ul>
-	            </div><!-- /btn-group -->
-	            </div><!-- /btn-toolbar -->
-		</div>
+		<%= render :partial => "shared/filter" %>
 	
 	
 	
 	
- <% @num = 1%>	
 
- <% for post in @group.posts %>	
-	
-	<div class="span1">
-	  <p> <small> <%= @num %> | +21 </small>
-		
-		<% if !post.link.blank? %>
-
-			<a href="<%= post.link %>" i class="icon-share" target="_blank"></a>
-			
-			
-		<% end %>
-		
-		</p>
-	</div>	
-
-	<div class="span6">
-
- <h3 class="title"><%= link_to post.title, group_post_path(@group, post) %> </h3>
-	  <p><small><%= link_to post.group.name, group_path(post.group)%> | <%= distance_of_time_in_words_to_now(post.created_at)  %> ago by <%= link_to post.user.username, user_path(post.user) %> (+21 thumbs up/ 50 comments)</small></p>	
-	
-	</div>
-	 <% @num += 1  %>
-	
-<% end %>
-
+<%= render :partial => "shared/posts", :locals => { :posts => @group.posts }%>
 
 
 
@@ -63,23 +22,7 @@
   <div class="row">
 			<div class="span4">	  
 
-		        <div class="well"> 
-<p><small> created <%= distance_of_time_in_words_to_now(@group.created_at)  %> ago by <%= link_to @group.user.username, user_path(@group.user) %></small></p>
-					<h2><%= @group.name %>		
-	
-	<% if user_signed_in? %>
-	<% if @group.user_id == current_user.id %>
-			<%= link_to edit_group_path(@group) do %>
-				  <i class="icon-edit"></i>
-			<% end %>
-	<% end %>
-	<% end %>
-			</h2>
-					
-					<p><%= @group.about%></p>
-					
-					
-			</div>
+<%= render 'shared/group_title'%>
 				
 				
 				<p>	<%=link_to "New post", new_group_post_path(@group.id), :class => "btn"%></p>
@@ -89,23 +32,7 @@
 				
 				
 				
-				
-		          <a href="#">
-		            <img src="http://placehold.it/40x40" alt="">
-		          </a>
-		          <a href="#">
-		            <img src="http://placehold.it/40x40" alt="">
-		          </a>
-				  <a href="#">
-		            <img src="http://placehold.it/40x40" alt="">
-		          </a><a href="#">
-		            <img src="http://placehold.it/40x40" alt="">
-		          </a><a href="#">
-		            <img src="http://placehold.it/40x40" alt="">
-		          </a><a href="#">
-		            <img src="http://placehold.it/40x40" alt="">
-		          </a>
-
+			
 
 
 

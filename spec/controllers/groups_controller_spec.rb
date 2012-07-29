@@ -26,7 +26,7 @@ describe GroupsController do
 
   describe "Test section creation by signing in user and creating section" do
       it "create section" do
-        visit '/'
+        visit 'http://localhost:3000/'
         click_link 'Sign in'
         page.should have_content "Sign in"
         fill_in "Email", :with => 'user1@gmail.com'

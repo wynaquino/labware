@@ -34,7 +34,7 @@ describe PostsController do
         click_button "Sign in"
         page.should have_content "Signed in successfully"
         
-        click_link 'Mytrainginglog'
+        click_link 'myTraingingLog'
         page.should have_content "myTraingingLog"
         click_link 'New post'
         fill_in "Title", :with => 'Just a test title'
@@ -54,7 +54,7 @@ describe PostsController do
         click_button "Sign in"
         page.should have_content "Signed in successfully"
         
-        click_link 'Mytrainginglog'
+        click_link 'myTraingingLog'
         page.should have_content "myTraingingLog"
         click_link 'New post'
         fill_in "Title", :with => ''

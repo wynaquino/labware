@@ -1,0 +1,18 @@
+	        <div class="well"> 
+
+				<h2><%= link_to @group.name, group_path(@group) %>		
+
+<% if user_signed_in? %>
+<% if @group.user_id == current_user.id %>
+		<%= link_to edit_group_path(@group) do %>
+			  <i class="icon-edit"></i>
+		<% end %>
+<% end %>
+<% end %>
+		</h2>
+				
+				<p><%= @group.about%></p>
+				
+				<p><small> created <%= distance_of_time_in_words_to_now(@group.created_at)  %> ago </br>
+			by <%= link_to @group.user.username, user_path(@group.user) %> </small></p>
+		</div>

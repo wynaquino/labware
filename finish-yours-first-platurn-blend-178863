@@ -1,0 +1,442 @@
+  
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/MusicRecording" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" xmlns:fb="http://www.facebook.com/2008/fbml" class="mc layout-detail view-index">
+<head>
+    <title>Platurn - Finish Yours First (Platurn Blend)  - Mixcrate</title>
+    <!--
+      @author dj scrappy
+    -->
+    <link rel="shortcut icon" href="http://www.mixcrate.com/favicon.ico" type="image/x-icon" />
+    <meta http-equiv=Content-Type content="text/html; charset=UTF-8" />
+<meta name="robots" content="index, follow" /><meta name="description" content="Find DJs and DJ mixes by DJs from around the world." /><meta name="keywords" content="dj mixes, upload dj mixes, dj mixtape, dj, podcast, mixtape, hip hop mix, house mix, club mix, turntablism, serato, club dj, wedding dj, dmc" /><meta property="og:title" content="Platurn - Finish Yours First (Platurn Blend) on Mixcrate" /><meta property="og:url" content="http://www.mixcrate.com/djplaturn/finish-yours-first-platurn-blend-178863" /><meta property="og:site_name" content="Mixcrate" /><meta property="fb:app_id " content="124732067608269" /><meta property="og:type" content="song" /><meta property="og:audio:title" content="Finish Yours First (Platurn Blend)" /><meta property="og:audio:artist" content="T La Rock Vs Jurassic Five" /><meta property="og:audio:type" content="application/mp3" /><meta itemprop="url" content="http://www.mixcrate.com/djplaturn/finish-yours-first-platurn-blend-178863"><meta itemprop="name" content="Finish Yours First (Platurn Blend)"><meta itemprop="creator" content="T La Rock Vs Jurassic Five"><meta itemprop="image" content="http://www.mixcrate.com/img/ugc/covers/1/7/178863_l.jpg?v=718201236"><meta itemprop="duration" content="4:08"><meta itemprop="dateCreated" content="2012-07-18 18:24:11"><meta itemprop="interactionCount" content="1 UserLikes, 1 UserComments"><link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Oswald" /><link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Terminal+Dosis:400,200" />
+	<link rel="stylesheet" type="text/css" href="/css/vendors/bootstrap.2.0.min.css?1339144881" />
+	<link rel="stylesheet" type="text/css" href="/css/common/mc.bootstrap-override.css?1340263776" />
+	<link rel="stylesheet" type="text/css" href="/css/common/mc.common.css?1340979573" />
+	<link rel="stylesheet" type="text/css" href="/css/common/mc.mix-cards.css?1342496156" />
+	<link rel="stylesheet" type="text/css" href="/css/detail/mc.detail.css?1340979573" />
+
+	<script type="text/javascript" src="/js/vendors/jquery.min.js?1337664682"></script>
+	<script type="text/javascript" src="/js/vendors/lib.js?1337664645"></script>
+
+	<script type="text/javascript" src="/js/vendors/jquery.validate.min.js?1337664473"></script>
+	<script type="text/javascript" src="/js/vendors/jquery.cookie.js?1338519897"></script>
+	<script type="text/javascript" src="/js/common/mc.common.js?1342158463"></script>
+	<script type="text/javascript" src="/js/common/mc.Comment.js?1337666096"></script>
+	<script type="text/javascript" src="/js/common/mc.Playlist.js?1332574699"></script>
+	<script type="text/javascript" src="/js/common/mc.Rating.js?1332574708"></script>
+	<script type="text/javascript" src="/js/common/mc.Follow.js?1339144881"></script>
+	<script type="text/javascript" src="/js/vendors/jquery.base64.js?1339998771"></script>
+	<script type="text/javascript" src="/js/vendors/jquery-jplayer/jquery.jplayer.min.js?1330465275"></script>
+	<script type="text/javascript" src="/js/pages/mc.detail.js?1342158463"></script>
+<!--[if lt IE 9]><link rel="stylesheet" type="text/css" href="/css/common/mc.ie.css?1342333199" /><script type="text/javascript" src="/js/vendors/html5ie.js?1330023140"></script><![endif]--><script>MC.userLoginData = null; MC.pageData = {"Mix":{"username":"djplaturn","uploadsid":"178863","title":"Finish Yours First (Platurn Blend)","artist":"T La Rock Vs Jurassic Five","seourl":"http:\/\/www.mixcrate.com\/djplaturn\/finish-yours-first-platurn-blend-178863","coverimg":"http:\/\/www.mixcrate.com\/img\/ugc\/covers\/1\/7\/178863_t.jpg?v=718201236","duration":"4:08","au":"aHR0cDovLzE5OS4xOS4xMTEuMjEyL2F1ZGlvLzEvNy8xNzg4NjMtR29rNm1hbDIubXAz","autoplay":false},"User":{"publicname":"Platurn","profileurl":"http:\/\/www.mixcrate.com\/djplaturn","photo":"http:\/\/www.mixcrate.com\/img\/ugc\/profiles\/7\/1\/711_t.jpg?v=616201220"}};</script></head>
+<body>
+<div>
+<nav class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container relative">
+            <ul class="nav navbar-list">
+                <li class="feature-dropdown">
+                    <h1 class="logo">
+                        <a class="home-link sprite-global" href="http://www.mixcrate.com"><span>Mixcrate</span></a>
+                    </h1>
+                    <ul class="droplist">
+                        <li class="upload-mix">
+                            <a class="signin-req" href="/uploads/">
+                                <span class="sprite-global">Upload DJ Mix</span>
+                            </a>
+                        </li>
+                        <li class="dj-mixes">
+                            <a class="arrow sprite-global" href="/dj_mixes/all/dateadded/desc/1/">
+                                <span class="sprite-global">DJ Mixes</span>
+                            </a>
+                            <ul class="nav-dropdown dj-mixes-dropdown">
+                                <li class="inner-container browse-inner-container">
+                                    <h4>Browse</h4>
+                                    <ul class="inner-list">
+                                        <li class="inner"><a href="/dj_mixes/all/dateadded/desc/1/">Recently added</a></li>
+                                        <li class="inner"><a href="/dj_mixes/all/likes/desc/1/">Most liked</a></li>
+                                        <li class="inner"><a href="/dj_mixes/all/playcount/desc/1/">Most played</a></li>
+                                    </ul>  
+                                </li>
+                                <li class="inner-container genres-inner-container">
+                                    <h4>Genres</h4>
+                                    <ul class="inner-list genre-list">
+                                        <li class="genre-col">
+                                            <ul>
+                                                <li><a href="/dj_mixes/alternative/dateadded/desc/1/">Alternative</a></li><li><a href="/dj_mixes/breaks/dateadded/desc/1/">Breaks</a></li><li><a href="/dj_mixes/country/dateadded/desc/1/">Country</a></li><li><a href="/dj_mixes/dance/dateadded/desc/1/">Dance</a></li><li><a href="/dj_mixes/dancehall/dateadded/desc/1/">Dancehall</a></li><li><a href="/dj_mixes/disco/dateadded/desc/1/">Disco</a></li><li><a href="/dj_mixes/downtempo/dateadded/desc/1/">Downtempo</a></li></ul></li><li class="genre-col"><ul><li><a href="/dj_mixes/drum_and_bass/dateadded/desc/1/">Drum And Bass</a></li><li><a href="/dj_mixes/dubstep/dateadded/desc/1/">Dubstep</a></li><li><a href="/dj_mixes/electro/dateadded/desc/1/">Electro</a></li><li><a href="/dj_mixes/freestyle/dateadded/desc/1/">Freestyle</a></li><li><a href="/dj_mixes/funk/dateadded/desc/1/">Funk</a></li><li><a href="/dj_mixes/hip_hop/dateadded/desc/1/">Hip Hop</a></li><li><a href="/dj_mixes/house/dateadded/desc/1/">House</a></li></ul></li><li class="genre-col"><ul><li><a href="/dj_mixes/jazz/dateadded/desc/1/">Jazz</a></li><li><a href="/dj_mixes/latin/dateadded/desc/1/">Latin</a></li><li><a href="/dj_mixes/new_jack_swing/dateadded/desc/1/">New Jack Swing</a></li><li><a href="/dj_mixes/old_school/dateadded/desc/1/">Old School</a></li><li><a href="/dj_mixes/progressive_house/dateadded/desc/1/">Progressive House</a></li><li><a href="/dj_mixes/reggae/dateadded/desc/1/">Reggae</a></li><li><a href="/dj_mixes/remix/dateadded/desc/1/">Remix</a></li></ul></li><li class="genre-col"><ul><li><a href="/dj_mixes/rhythm_and_blues/dateadded/desc/1/">Rhythm And Blues</a></li><li><a href="/dj_mixes/rock/dateadded/desc/1/">Rock</a></li><li><a href="/dj_mixes/slow_jam/dateadded/desc/1/">Slow Jam</a></li><li><a href="/dj_mixes/soul/dateadded/desc/1/">Soul</a></li><li><a href="/dj_mixes/techno/dateadded/desc/1/">Techno</a></li><li><a href="/dj_mixes/trance/dateadded/desc/1/">Trance</a></li><li><a href="/dj_mixes/turntablism/dateadded/desc/1/">Turntablism</a></li></ul></li><li class="genre-col"><ul>                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="playlists">
+                            <a class="arrow sprite-global signin-req" href="#">
+                                <span class="sprite-global">Your Playlist</span>
+                            </a>
+                                                    </li>
+                        <li class="search">
+                            <div class="search-container">
+                                <form action="/search/results/" method="get">
+                                    <input type="text" name="keyword" placeholder="Search Mixcrate" class="srch-box">
+                                    <input type="submit" class="sprite-global srch-icon"/>
+                                </form>
+                            </div>
+                        </li>
+                    </ul>	
+                </li>
+                                        <li class="signin">
+                            <a href="/users/login/" rel="nofollow" class="signin-btn">Sign In</a>
+                        </li>
+                                
+                <span class="sprite-global shop">
+                    <a href="http://shop.mixcrate.com" target="_blank" class="helvetica f12 muted"><strong class="accent">New!</strong> Visit the Mixcrate Shop</a>                </span>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div id="signin-modal" class="mc-modal modal fade">
+    <div class="modal-header">
+        <a class="close sprite-global" data-dismiss="modal"><span>close</span></a>
+        <h3 class="sprite-global">Sign in</h3>
+    </div>
+    <div class="alert alert-error none">Sign in is required for this action.</div>
+    <div class="modal-body"><form action="/users/login/" class="form-horizontal" id="UserIndexForm" method="post" accept-charset="utf-8"><div style="display:none;"><input type="hidden" name="_method" value="POST"/><input type="hidden" name="data[_Token][key]" value="61d93bdc03c5761ddcecb136d92c47fb3119a8ba" id="Token2101391002"/></div><div class="control-group"><label>User Name:</label><div class="controls"><input name="data[User][username]" class="required input-xlarge span3" maxlength="64" type="text" id="UserUsername"/></div></div><div class="control-group last"><label>Password:</label><div class="controls"><input name="data[User][password]" class="required input-xlarge span3" type="password" id="UserPassword"/></div></div></div><div class="modal-footer"><div class="extras"><span>New user? <a href="/users/create/">Sign up here.</a></span><span>Forgot <a href="/users/forgot/">password</a> or <a href="/users/forgot/">username</a></span></div><input  class="btn primary" type="submit" value="Sign In"/></div><div style="display:none;"><input type="hidden" name="data[_Token][fields]" value="907e88388e3178de60a93bce8fd084d48ddeb3df%3A" id="TokenFields584291607"/><input type="hidden" name="data[_Token][unlocked]" value="" id="TokenUnlocked2052783207"/></div></form></div>
+
+
+<section class="bd">
+    <div class="playbar headerbar sprite-grit">
+    <div class="container">
+        <header>
+            <h1 class="white caps soft">Finish Yours First (Platurn Blend)                            </h1>
+        </header>
+        
+        <div id="jplayer" class="jp-jplayer" data-mc-swfpath="/js/vendors/jquery-jplayer/"></div>
+        
+        <div id="jp_container_1" class="jp-audio hidden">
+            <div class="jp-type-single">
+                <div class="jp-gui jp-interface">
+                    <ul class="jp-controls unstyled">
+                        <li class="btn jp-control play-large jp-play"><a href="#" class="sprite-global" tabindex="1">play</a></li>
+                        <li class="btn jp-control pause-large jp-pause"><a href="#" id="pause-btn" class="sprite-global" tabindex="1">pause</a></li>
+                        <li class="none"><a href="#" class="jp-volume-max" tabindex="1" title="max volume">max volume</a></li>
+                    </ul>
+                    <div id="progress-bar" class="jp-mix">
+                        <div class="jp-current-time white"></div>
+                        <div class="jp-duration-cont"><span class="jp-duration"></span><span class="jp-total">/4:08</span></div>
+                        <div class="jp-progress">
+                            <div class="jp-seek-bar">
+                                <div class="jp-play-bar"></div>
+                            </div>
+                        </div>
+                        <div class="jp-volume-bar">
+                            <div class="jp-volume-bar-value"></div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <ul id="social-actions" class="unstyled sharing hidden">
+            <li class="internal">
+                <ul class="unstyled sharing-internal">
+                    <li class="btn dark sharing-control btn-rating"><a class="sprite-global" href="http://www.mixcrate.com/djplaturn" rel="nofollow" data-israted="false" data-uploadid="178863">Like</a></li>
+                    <li class="btn dark sharing-control btn-playlist"><a class="sprite-global" href="http://www.mixcrate.com/djplaturn" rel="nofollow"  data-isplaylisted="false" data-uploadid="178863">Save to Playlist</a></li>
+                                                        </ul>
+            </li>
+            <li class="external">
+                <ul class="unstyled">
+                    <li class="sharing-control google"><g:plusone size="medium"></g:plusone></li>
+                    <li class="sharing-control twitter"><a href="https://twitter.com/share" class="twitter-share-button" data-text="I'm listening to Finish Yours First (Platurn Blend) by T La Rock Vs Jurassic Five on Mixcrate" data-url="http://www.mixcrate.com/djplaturn/finish-yours-first-platurn-blend-178863" data-via="mixcrate" data-lang="en">Tweet</a></li>
+                    <li class="sharing-control facebook"><div class="fb-like" data-send="true" data-layout="button_count" data-width="100" data-show-faces="false"></div></li>
+                </ul>        
+            </li>
+            <li class="clear">&nbsp;</li>
+        </ul>
+            
+            
+
+    </div></div>
+
+  <div id="content" class="container">
+    <div class="span-details">
+
+        
+<div class="dj-details vcard">
+    <a href="http://www.mixcrate.com/djplaturn" class="dj-photo"><img src="http://www.mixcrate.com/img/ugc/profiles/7/1/711_t.jpg?v=616201220" width="50" height="50" class="photo" alt="Platurn's photo" /></a>
+    <div class="content">
+        <header>
+            <h2 class="engraved fn name"><a href="http://www.mixcrate.com/djplaturn">Platurn</a></h2>
+                            <span class="badge-small">Pro</span>
+                                        <span class="badge-small">Featured DJ</span>
+                    </header>
+        
+
+    <a href="http://www.mixcrate.com/djplaturn"
+        role="button"
+        data-isfollowing="false"
+        data-followeruserid="711"
+        data-publicname="Platurn"
+        data-profileurl="http://www.mixcrate.com/djplaturn"
+        data-photo="http://www.mixcrate.com/img/ugc/profiles/7/1/711_t.jpg?v=616201220"
+        class="btn btn-follow btn-primary signin-req">
+            <span class="sprite-global">Follow</span>
+        </a>
+        <span class="member-since">Member since Nov. 2009</span>
+    </div> 
+</div>
+
+<hr class="separator" />
+ 
+
+<table class="tracks-tbl table table-condensed caps f12">
+    <thead>
+    <tr>
+        <th class="title bold">Track Title</th>
+        <th class="artist bold">Artist</th>
+        <th class="retailers bold">Buy Track</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr class=""><td class="title">Finish Yours First (Platurn Blend)</td><td class="artist">T La Rock Vs Jurassic Five</td><td class="links"><a href="http://www.amazon.com/gp/search?ie=UTF8&amp;tag=mixcrate-20&amp;index=digital-music&amp;linkCode=ur2&amp;camp=1789&amp;creative=9325&amp;keywords=T+La+Rock+Vs+Jurassic+Five+Finish+Yours+First+%28Platurn+Blend%29" class="f10 sprite-global icon-amazon retailer" rel="nofollow, noindex" title="Buy - Finish Yours First (Pl... by T La Rock Vs Jurassic Five - on Amazon" target="_blank">amazon</a></td></tr><tr class=""><td class="title">Finish Yours First (Platurn Blend)</td><td class="artist">T La Rock Vs Jurassic Five</td><td class="links"><a href="http://www.amazon.com/gp/search?ie=UTF8&amp;tag=mixcrate-20&amp;index=digital-music&amp;linkCode=ur2&amp;camp=1789&amp;creative=9325&amp;keywords=T+La+Rock+Vs+Jurassic+Five+Finish+Yours+First+%28Platurn+Blend%29" class="f10 sprite-global icon-amazon retailer" rel="nofollow, noindex" title="Buy - Finish Yours First (Pl... by T La Rock Vs Jurassic Five - on Amazon" target="_blank">amazon</a></td></tr>    </tbody>
+    </table>
+
+<div class="tags-and-genres"><ul class="genres jellybean unstyled">
+    <li class="heading"><strong>Genres</strong></li>
+    <li><a href="/dj_mixes/hip_hop/dateadded/desc/1/" title="hip hop">hip hop</a></li><li><a href="/dj_mixes/old_school/dateadded/desc/1/" title="old school">old school</a></li><li><a href="/dj_mixes/remix/dateadded/desc/1/" title="remix">remix</a></li></ul>
+</div><p class="mix-desc">Jurassic Five's "Jurass Finish First" instrumental (one of my favorite beats by the homie Nu-Mark) blended with T La Rock "It's Yours" acapella.<br /><br />Simple, yet effective.<br /><br />Enjoy!</p><hr class="separator"></hr>    <div class="more-mixes">
+        <header>
+            <h3 class="caps engraved">More DJ Mixes by Platurn</h3>
+            <strong><a href="http://www.mixcrate.com/djplaturn/dj_mixes" title="See all mixes by Platurn">All 9 mixes &raquo;</a></strong>        </header>
+            
+        <ul class="unstyled">
+                                <li class="mix">
+                        <a href="http://www.mixcrate.com/djplaturn/aint-my-type-of-hype-video-mix-platurn-edit-177126" title="Ain't My Type Of Hype (Video Mix -- Platurn Edit)">
+                            <img src="http://www.mixcrate.com/img/ugc/covers/1/7/177126_t.jpg?v=714201227" width="100" height="100" alt="Cover Image for Ain't My Type Of Hype (Video Mix -- Platurn Edit)" class="overflow-cover100" /> 
+                            Ain't My Type Of Hype (Video Mix -- P...                        </a>
+                    </li>
+                                <li class="mix">
+                        <a href="http://www.mixcrate.com/djplaturn/so-this-is-de-la-heaven-pt-2-preview-173677" title="So This Is De La Heaven Pt. 2 (preview)">
+                            <img src="http://www.mixcrate.com/img/ugc/covers/1/7/173677_t.jpg?v=707201225" width="100" height="100" alt="Cover Image for So This Is De La Heaven Pt. 2 (preview)" class="overflow-cover100" /> 
+                            So This Is De La Heaven Pt. 2 (preview)                        </a>
+                    </li>
+                                <li class="mix">
+                        <a href="http://www.mixcrate.com/djplaturn/dope-on-plastic-guest-dj-mix-150923" title="'Dope On Plastic' Guest DJ Mix">
+                            <img src="http://www.mixcrate.com/img/ugc/covers/1/5/150923_t.jpg?v=616201220" width="100" height="100" alt="Cover Image for 'Dope On Plastic' Guest DJ Mix" class="overflow-cover100" /> 
+                            'Dope On Plastic' Guest DJ Mix                        </a>
+                    </li>
+                                <li class="mix">
+                        <a href="http://www.mixcrate.com/djplaturn/love-hate-2011-valentines-mix-118036" title="Love & Hate (2011 Valentine's Mix)">
+                            <img src="http://www.mixcrate.com/img/ugc/covers/1/1/118036_t.jpg?v=616201220" width="100" height="100" alt="Cover Image for Love & Hate (2011 Valentine's Mix)" class="overflow-cover100" /> 
+                            Love & Hate (2011 Valentine's Mix)                        </a>
+                    </li>
+                                <li class="mix last-child">
+                        <a href="http://www.mixcrate.com/djplaturn/the-best-of-a-tribe-called-quest-v1-87621" title="The Best Of A Tribe Called Quest V.1">
+                            <img src="http://www.mixcrate.com/img/ugc/covers/8/7/87621_t.jpg?v=616201220" width="100" height="100" alt="Cover Image for The Best Of A Tribe Called Quest V.1" class="overflow-cover100" /> 
+                            The Best Of A Tribe Called Quest V.1                        </a>
+                    </li>
+                    </ul>
+    </div>
+    <hr class="separator" />
+        
+<div id="comments-container" class="comments-container">
+ 
+    <header>
+        <h2 class="engraved">
+           1 Comment        </h2>
+            </header>
+
+    
+    <ol class="comments unstyled"><li class="comment-template none"><a href="http://www.mixcrate.com" class="profileurl"><img src="http://www.mixcrate.com/img/ugc/profiles/default_user_50.gif" width="50" height="50" class="profilephoto" alt="" /></a><div class="content"><div class="quote"><a href="http://www.mixcrate.com" class="bold publicname"></a> <blockquote></blockquote></div><abbr title="">A moment ago</abbr></div></li><li class="comment"><a href="http://www.mixcrate.com/tranquility" class="profileurl"><img src="http://www.mixcrate.com/img/ugc/profiles/8/9/89111_t.jpg?v=616201220" width="50" height="50" class="profilephoto" alt="" /></a><div class="content"><div class="quote"><a href="http://www.mixcrate.com/tranquility" class="bold publicname">Brent Mussberger</a> <blockquote>Great!</blockquote></div><abbr title="2012-07-18 21:43:36">3 hours ago</abbr></div></li></ol>
+    Please <a href="/users/login/" class="signin-req" data-controls-modal="signin-modal" data-backdrop="static" data-keyboard="1">sign in</a> to comment. New to Mixcrate? <a href="/users/create/">Create an account</a>.<div class="comment-form-wrapper"><img src="http://www.mixcrate.com/img/ugc/profiles/default_user_50.gif" width="50" height="50" alt="" /><form action="/djplaturn/finish-yours-first-platurn-blend-178863" class="comment-form" id="CommentIndexForm" method="post" accept-charset="utf-8"><div style="display:none;"><input type="hidden" name="_method" value="POST"/><input type="hidden" name="data[_Token][key]" value="61d93bdc03c5761ddcecb136d92c47fb3119a8ba" id="Token387690780"/></div><div class="clearfix"><label class="none">Comment:</label><div class="input"><textarea name="data[Comment][comment]" rows="3" class="span7 xlarge disabled" disabled="disabled" placeholder="Write a comment..." id="CommentComment"></textarea></div></div><div class="actions"><input  class="btn primary disabled btn-add-comment" type="submit" value="Add Comment"/></div><div style="display:none;"><input type="hidden" name="data[_Token][fields]" value="6fb78822cd26c364f4ee189513ae986e209715ec%3A" id="TokenFields90269499"/><input type="hidden" name="data[_Token][unlocked]" value="" id="TokenUnlocked184492638"/></div></form></div></div>
+    </div>
+    
+    <div class="span-300">
+                <div class="featured-tags sprite-global featured">
+            This is a Featured Mix        </div>
+
+
+<img src="http://www.mixcrate.com/img/ugc/covers/1/7/178863_l.jpg?v=718201236" width="300" height="300" alt="Finish Yours First (Platurn Blend) cover image" class="block cover overflow-cover300" />
+<div class="stats sprite-grit white">
+    <div class="count-wrapper clear">
+        <div class="count muted odd"><h3 class="white f28">37</h3> <span class="count-type muted caps terminal">Plays</span></div><div class="count muted"><h3 class="white f28">1</h3> <span class="count-type muted caps terminal">Like</span></div><div class="count muted odd no-bottom-border-el"><h3 class="white f28">1</h3> <span class="count-type muted caps terminal">Comment</span></div>    </div>
+
+    <div id="actors" class="section clear">
+    <h5 class="caps white">Saved by 1 Person</h5>    <ul class="unstyled actors">
+                        <li>
+                    <a href="http://www.mixcrate.com/koloa" title="koloa" class="actor">
+                        <img src="http://www.mixcrate.com/img/ugc/profiles/default_user_50.gif" alt="koloa's photo" width="25" height="25" />
+                    </a>
+                </li>
+            </ul>
+</div><div id="actors" class="section clear">
+    <h5 class="caps white">Liked by 1 Person</h5>    <ul class="unstyled actors">
+                        <li>
+                    <a href="http://www.mixcrate.com/tranquility" title="Brent Mussberger" class="actor">
+                        <img src="http://www.mixcrate.com/img/ugc/profiles/8/9/89111_t.jpg?v=616201220" alt="Brent Mussberger's photo" width="25" height="25" />
+                    </a>
+                </li>
+            </ul>
+</div>
+    <div class="more-info">
+        <dl>
+            <dt>Official Release Date</dt><dd>Jul 2012</dd><dt>Uploaded</dt><dd>7 hours ago</dd>        </dl>
+    </div>
+</div>
+
+
+<div class="adunit-300x600">    
+        <IFRAME
+      SRC="http://ad.doubleclick.net/adi/N2789.932587.THEBPM.NET/B6733897;sz=300x250;ord=%%CACHEBUSTER%%?"
+      WIDTH=300 HEIGHT=250 MARGINWIDTH=0 MARGINHEIGHT=0 HSPACE=0 VSPACE=0 FRAMEBORDER=0
+      SCROLLING=no BORDERCOLOR='#000000'>
+      <SCRIPT language='JavaScript1.1'
+      SRC="http://ad.doubleclick.net/adj/N2789.932587.THEBPM.NET/B6733897;abr=!ie;sz=300x250;ord=%%CACHEBUSTER%%?">
+      </SCRIPT>
+      <NOSCRIPT>
+      <A
+      HREF="http://ad.doubleclick.net/jump/N2789.932587.THEBPM.NET/B6733897;abr=!ie4;abr=!ie5;sz=300x250;ord=%%CACHEBUSTER%%?">
+      <IMG
+      SRC="http://ad.doubleclick.net/ad/N2789.932587.THEBPM.NET/B6733897;abr=!ie4;abr=!ie5;sz=300x250;ord=%%CACHEBUSTER%%?"
+      BORDER=0 WIDTH=300 HEIGHT=250 ALT="Advertisement"></A>
+      </NOSCRIPT>
+</IFRAME>
+</div>
+<div class="adunit-300x250">
+    <!-- FM Medium Rectangle Zone -->
+    <script type='text/javascript' src='http://static.fmpub.net/zone/7610'></script>
+    <!-- FM Medium Rectangle Zone -->
+</div>
+    </div> 
+</div>
+
+</section>
+    
+</div> <footer class="footer sprite-grit">
+    <div class="container">
+        <div class="row footer-menu">
+            <div class="span3">
+                <ul class="main-menu">
+                    <li class="sprite-global upload"><a href="/uploads/">Upload a DJ Mix</a></li>
+                    <li class="sprite-global browse"><a href="/dj_mixes/all/dateadded/desc/1/">Browse DJ Mixes</a></li>
+                    <li class="sprite-global playlist signin-req"><a href="http://www.mixcrate.com" rel="nofollow">Your Playlist</a></li>
+                    <li class="sprite-global shop"><a href="http://shop.mixcrate.com" target="_blank"><strong class="accent">New!</strong> Shop Mixcrate</a></li>
+                    <li class="search">
+                        <form action="/search/results/" method="get" class="pull-left">
+                          <input type="text" name="keyword" placeholder="Search Mixcrate" class="srch-box">
+                          <input type="submit" class="sprite-global srch-icon"/>
+                        </form>
+                    </li>
+                </ul>
+            </div>
+            <div class="span2">
+                <h4 class="footer-heading">Company</h4>
+                <ul class="main">
+                    <li><a href="/pages/about/">About Mixcrate</a></li>
+                    <li><a href="/pages/team/">The Team</a></li>
+                    <li><a href="/pages/partners/">Partners</a></li>
+                    <li><a href="/pages/join/">Jobs</a></li>
+                    <li><a href="/pages/contact/">Contact</a></li>
+                </ul>
+            </div>
+            <div class="span2">
+                <h4 class="footer-heading">Support</h4>
+                <ul class="support">
+                    <li><a href="/pages/faqs/">FAQs</a></li>
+                    <li><a href="http://getsatisfaction.com/mixcrate" target="getsatisfaction" rel="nofollow, noindex">Support Forum</a></li>
+                    <li><a href="/pages/privacy_policy/">Privacy Policy</a></li>
+                    <li><a href="/pages/upload_policy/">Upload Policy</a></li>
+                    <li><a href="/pages/terms/">Terms of Use</a></li>
+                </ul>
+            </div>
+           <div class="span2">
+                <h4 class="footer-heading">Services</h4>
+                <ul class="services">
+                                        <li><a href="/pages/advertise/">Advertise with Us</a></li>
+                                    </ul>
+          </div>
+          <div class="span2">
+                <h4 class="footer-heading">Follow Mixcrate</h4>
+                <ul class="follow">
+                    <li>
+                        <iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Ffacebook.com%2Fmixcratecrew&amp;send=false&amp;layout=standard&amp;width=1400&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;height=35&amp;appId=124732067608269" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:200px; height:35px;" allowTransparency="true"></iframe>
+                    </li>
+                    <li>
+                        <a href="https://twitter.com/mixcrate" class="twitter-follow-button" data-show-count="false" data-lang="en">Follow @mixcrate</a>
+                        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+                    </li>
+                </ul>
+          </div>
+        </div>  
+    </div>
+    <div class="copyright">
+        <div class="container">
+            <ul class="unstyled">
+                <li class="muted">Designed and built for DJs and their fans by <a href="/pages/team/" class="link">the team</a> at <a href="http://twitter.com/mixcrate/" class="link" target="twitter" title="Follow us on Twitter - @mixcrate">@mixcrate</a>.</li>
+                <li class="muted">&copy; 2012 Mixcrate LLC.</li>
+            </ul>
+        </div>
+    </div> 
+</footer>
+
+<script>
+    _qoptions={
+    qacct:"p-2fLiSekEtqro6"
+    };
+    
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    try {
+    var pageTracker = _gat._getTracker("UA-11349281-1");
+    pageTracker._trackPageview();
+    } catch(err) {}
+</script>
+<!-- Quantcast Tag -->
+<script>
+var _qevents = _qevents || [];
+
+(function() {
+    var elem = document.createElement('script');
+    elem.src = (document.location.protocol == "https:" ? "https://secure" : "http://edge") + ".quantserve.com/quant.js";
+    elem.async = true;
+    elem.type = "text/javascript";
+    var scpt = document.getElementsByTagName('script')[0];
+    scpt.parentNode.insertBefore(elem, scpt);
+})();
+
+_qevents.push([{
+qacct:"p-2fLiSekEtqro6"
+},
+{
+qacct:"p-58f7ovbkhWYW2" // DJmix
+}]);
+</script>
+
+<noscript>
+<div class="none">
+    <img src="//pixel.quantserve.com/pixel?a.1=p-2fLiSekEtqro6&a.2=p-58f7ovbkhWYW2" border="0" height="1" width="1" alt="Quantcast"/>
+</div>
+</noscript>
+<!-- End Quantcast tag -->
+
+<!-- FM Tracking Pixel -->
+<script type='text/javascript' src='http://static.fmpub.net/site/mixcrate'></script>
+<!-- FM Tracking Pixel -->
+<div id="fb-root"></div>
+<script>
+(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+</script><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script><script type="text/javascript">
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script></body>
+</html>

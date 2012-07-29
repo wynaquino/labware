@@ -21,7 +21,7 @@ class GroupsController < ApplicationController
   # GET /groups/1
   # GET /groups/1.json
   def show
-    @group = Group.find(params[:id])
+    @group = Group.find_by_url(params[:id])
     
    if user_signed_in?
       if @group.is_private == true and current_user.id == @group.user_id

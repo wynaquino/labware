@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120707145958) do
+ActiveRecord::Schema.define(:version => 20120728174455) do
 
   create_table "groups", :force => true do |t|
     t.string   "name",       :default => "",    :null => false
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(:version => 20120707145958) do
     t.datetime "updated_at",                    :null => false
     t.boolean  "is_private", :default => false
     t.boolean  "frontpage",  :default => false
+    t.string   "url"
   end
 
   create_table "groups_users", :id => false, :force => true do |t|
