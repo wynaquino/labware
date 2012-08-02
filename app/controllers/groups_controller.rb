@@ -61,7 +61,7 @@ class GroupsController < ApplicationController
   # GET /groups/1/edit
   def edit
     #@group = Group.find(params[:id])
-    @group = current_user.groups.find(params[:id])
+    @group = current_user.groups.find_by_url(params[:id])
  
     end
 
@@ -88,7 +88,7 @@ class GroupsController < ApplicationController
   # PUT /groups/1.json
   def update
     #@group = Group.find(params[:id])
-    @group = current_user.groups.find(params[:id])
+    @group = current_user.groups.find_by_url(params[:id])
 
     respond_to do |format|
       if @group.update_attributes(params[:group])
