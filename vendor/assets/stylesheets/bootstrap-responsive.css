@@ -238,6 +238,9 @@
   .span7 {
     width: 414px;
   }
+  .span7a {
+    width: 450px;
+  }
   .span6 {
     width: 352px;
   }
@@ -528,6 +531,17 @@
   .offset1 {
     margin-left: 130px;
   }
+
+  .offset1-1 {
+  margin-left: 50px;
+}
+
+.offset2-1 {
+  margin-left: 230px;
+}
+
+
+
   .row-fluid {
     width: 100%;
     *zoom: 1;

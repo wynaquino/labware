@@ -1,4 +1,5 @@
 class Post < ActiveRecord::Base
+  acts_as_commentable
       attr_accessible :title, :content, :is_private, :is_draft, :is_locked, :is_sticky, :user_id, :group_id, :created_at, :updated_at, :link
   
   validates :title, :presence => true, :length => {:within => 3..70 }

@@ -9,6 +9,8 @@ gem 'bootstrap-will_paginate', '0.0.6'
 gem 'devise' 
 gem 'RedCloth', :require => 'redcloth'
 gem 'stringex'
+gem 'awesome_nested_set'
+gem 'acts_as_commentable_with_threading'
 
 group :development do
   gem 'sqlite3', '1.3.5'

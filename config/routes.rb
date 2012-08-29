@@ -1,27 +1,24 @@
 Labware::Application.routes.draw do
 
 
-  get "public/index"
-
-  get "public/about"
-
   #get "public/contact"
  match '/contact' => 'public#contact'
  match '/about' => 'public#about'
  match '/privacy' => 'public#privacy'
-
-
-  #get "public/privacy"
-
   root :to => "public#index"
 
+
+  
   devise_for :users, :layout => "devise"
   resources :users
+
+  resources :posts do
+    resources :comments
+  end
   
   resources :groups do
     resources :posts
   end
-
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

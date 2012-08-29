@@ -1,0 +1,9 @@
+<h3>Commenting to : </h3>
+
+<%= form_for [@post, @comment], :url => post_comments_url do |f| %>
+
+
+<%= render 'form', :f => f %>
+<% end %>
+
+

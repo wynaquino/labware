@@ -1,0 +1,56 @@
+
+<div class="span7">
+
+<div class="page-header">
+<h1><small>Comments </small></h1>
+</div>
+
+</div>
+
+
+
+<% for comment in @post.root_comments %>
+
+
+	<div class="span7">
+
+
+		<p><small><%= link_to comment.user.username, user_path(comment.user.username) %>  <%= distance_of_time_in_words_to_now(comment.created_at)  %> 
+	
+
+			
+			<% if user_signed_in?%>
+			- <%= link_to "reply", reply_path(:post_id => @post, :parent_comment_id => comment.id) %> 
+			<% end %>
+
+			<% if user_signed_in?%>
+			<% if current_user.username == comment.user.username %>
+			<%= link_to "edit", user_path(comment.user.username) %>
+			<% end %>
+			<% end %>
+			</small></p>
+	
+		<%= sanitize(textilize(comment.body )) %>
+	
+	 <hr>
+	
+	
+	
+	
+	
+	
+	
+	</div>
+	
+		
+		
+
+
+<% end %>
+
+
+
+
+
+
+
