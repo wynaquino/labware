@@ -2,17 +2,63 @@
 
 
 
-<div class="span7 offset1-1">
-	<p><small><%= link_to comment.user.username, user_path(comment.user.username) %>  <%= distance_of_time_in_words_to_now(comment.created_at)  %> 
 
-		<% if user_signed_in?%>
-		- <%= link_to "reply", reply_path(:post_id => @post, :parent_comment_id => comment.id) %> 
-		<% end %>
+	<div class="span7 offset1-1 pcomment">
+<% @comment1 = comment.children%>
+	<% for comment in @comment1 %>
+		 <%= render "comment_replies", :comment => comment %>
+		
+			<div class="span7 offset1-1 pcomment">
+		<% @comment2 = comment.children%>
+			<% for comment in @comment2 %>
+		 <%= render "comment_replies", :comment => comment %>
+							
+					<div class="span7 offset1-1 pcomment">
+				<% @comment3 = comment.children%>
+					<% for comment in @comment3 %>
+				 <%= render "comment_replies", :comment => comment %>
+									
+						<div class="span7 offset1-1 pcomment">
+						<% @comment4 = comment.children%>
+							<% for comment in @comment4 %>
+						 <%= render "comment_replies", :comment => comment %>
 
-		<% if user_signed_in?%>
-		<% if current_user.username == comment.user.username %>
-		<%= link_to "edit", user_path(comment.user.username) %>
-		<% end %>
-		<% end %>
-		</small></p>
-	3 Yes, the bed is the most important furniture item in the home. Half of the waking day is spend in la la land. Why? So your body can rest and relax. The brain continues to heal and process all the daily activities.Yes, the bed is the most important furniture item in the home. Half of the waking day is spend in la la land. Why? So your body can rest and relax. The brain continues to heal and process all the daily activities.Yes, the bed is the most important furniture item in the home. Half of the waking day is spend in la la land. Why? So your body can rest and relax. The brain continues to heal and process all the daily activities.	</div>
+
+
+
+									<% end %>
+								</div>
+						<% end %>
+					</div>
+				<% end %>
+			</div>
+	<% end %>
+</div>
+
+-----show posts.
+
+	 <% @num = 1%>	
+	 <% for post in @group.posts %>	
+
+		<div class="span1">
+		  <p> <%= @num %> 
+
+			<% if !post.link.blank? %>
+
+				<a href="http://<%= post.link %>" i class="icon-share" target="_blank"></a>
+
+
+			<% end %>
+
+			</p>
+		</div>	
+
+		<div class="span6">
+
+	 <h3 class="title"><%= link_to post.title, group_post_path(@group, post) %> </h3>
+		  <p><small><%= distance_of_time_in_words_to_now(post.created_at)  %> ago by <%= link_to post.user.username, user_path(post.user) %> (+21 thumbs up/ <%= post.comment_threads.count %> comments)</small></p>	
+
+		</div>
+		 <% @num = @num + 1  %>
+
+	<% end %>

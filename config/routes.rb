@@ -13,7 +13,10 @@ Labware::Application.routes.draw do
   resources :users
 
   resources :posts do
-    resources :comments
+    resources :comments do
+        post "replies" => "comments#create_reply", :as => "create_reply"
+        get "replies/new" => "comments#new_reply", :as => "new_reply"
+      end
   end
   
   resources :groups do

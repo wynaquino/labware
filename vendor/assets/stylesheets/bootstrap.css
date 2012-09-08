@@ -2474,6 +2474,10 @@ table .span24 {
           border-radius: 4px;
 }
 
+.comment_reply a{ 
+display: inline-block; color: white; 
+}
+
 .well {
   min-height: 20px;
   padding: 19px;

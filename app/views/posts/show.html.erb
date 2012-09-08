@@ -5,7 +5,7 @@
 	<div class="span7">
 
  <h3 class="title"><%= link_to @post.title, group_post_path(params[:group_id], @post) %> </h3>
-	  <p><small><%= link_to @post.group.name, group_path(@post.group)%>    <%= distance_of_time_in_words_to_now(@post.created_at)  %> ago by <%= link_to @post.user.username, user_path(@post.user) %> (+21 thumbs up/ 50 comments)</small></p>	
+	  <p><small><%= link_to @post.group.name, group_path(@post.group)%>    <%= distance_of_time_in_words_to_now(@post.created_at)  %> ago by <%= link_to @post.user.username, user_path(@post.user.username) %> (+21 thumbs up/ 50 comments)</small></p>	
 	
     <%= sanitize(textilize(@post.content)) %>
     

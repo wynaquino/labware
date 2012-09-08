@@ -38,6 +38,7 @@ class CommentsController < ApplicationController
 
   # GET /comments/1/edit
   def edit
+    @post = Post.find(params[:post_id])
     @comment = Comment.find(params[:id])
   end
 
@@ -60,16 +61,12 @@ class CommentsController < ApplicationController
   # PUT /comments/1.json
   def update
     @comment = Comment.find(params[:id])
+    @post = Post.find(params[:post_id])
 
-    respond_to do |format|
       if @comment.update_attributes(params[:comment])
-        format.html { redirect_to @comment, notice: 'Comment was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: "edit" }
-        format.json { render json: @comment.errors, status: :unprocessable_entity }
+        redirect_to group_post_path(@post.group, @post), notice: 'Comment updated.'
       end
-    end
+    
   end
 
   # DELETE /comments/1
@@ -83,4 +80,36 @@ class CommentsController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+  
+############### Replies
+
+def create_reply
+ # @post, @p_comment, @comment
+  
+  
+  @comment1 = Comment.new(params[:comment])
+  @post = Post.find(params[:post_id])
+  @p_comment = Comment.find(params[:comment_id])
+  @user_who_commented = current_user
+  @comment1 = Comment.build_from( @post, @user_who_commented.id, @comment1.body)
+
+  if @comment1.save
+    @comment1.move_to_child_of(@p_comment)
+    redirect_to group_post_path(@post.group, @post), notice: 'Reply created.'
+  else
+    redirect_to group_post_path(@post.group, @post), notice: 'Reply failed.'
+  end
+end  
+  
+def new_reply
+  @comment = Comment.new
+  @post = Post.find(params[:post_id])
+  @p_comment = Comment.find(params[:comment_id])
+  
+  
+  
+end  
+  
+  
 end

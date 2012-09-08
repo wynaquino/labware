@@ -1,0 +1,8 @@
+<h3>Replying to : <%= @p_comment.user.username%></h3>
+<%= form_for [@post, @p_comment, @comment], :url => post_comment_create_reply_url do |f| %>
+
+
+<%= render 'form', :f => f %>
+<% end %>
+
+

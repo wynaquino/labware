@@ -2,9 +2,12 @@
  <% @num = 1%>	
 
  <% for post in posts %>	
+
+
+<div class="row">
 	
 	<div class="span1">
-	  <p> <small> <%= @num %> | +21 </small>
+	  <p> <small> <%= @num %> | </small>
 		
 		<% if !post.link.blank? %>
 
@@ -16,12 +19,16 @@
 		</p>
 	</div>	
 
-	<div class="span6">
 
+
+	<div class="span6">
  <h3 class="title"><%= link_to post.title, group_post_path(post.group, post) %> </h3>
-	  <p><small><%= link_to post.group.name, group_path(post.group)%> | <%= distance_of_time_in_words_to_now(post.created_at)  %> ago by <%= link_to post.user.username, user_path(post.user) %> (+21 thumbs up/ 50 comments)</small></p>	
+	  <p><small><%= link_to post.group.name, group_path(post.group)%> | <%= distance_of_time_in_words_to_now(post.created_at)  %> ago by <%= link_to post.user.username, user_path(post.user) %> (<%= post.comment_threads.count %> comments)</small></p>	
 	
 	</div>
+	
+	</div>
+	
 	 <% @num += 1  %>
 	
 <% end %>

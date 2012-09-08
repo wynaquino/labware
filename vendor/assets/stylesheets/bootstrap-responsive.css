@@ -259,6 +259,11 @@
   .span1 {
     width: 42px;
   }
+
+.span1-1 {
+    width: 42px;
+  }
+
   .offset12 {
     margin-left: 764px;
   }
@@ -533,13 +538,14 @@
   }
 
   .offset1-1 {
-  margin-left: 50px;
+  margin-left: 20px;
 }
 
 .offset2-1 {
   margin-left: 230px;
 }
 
+.pcomment { border-left: 1px dotted gray; padding-left: 5px; ; padding-bottom: 5px;}
 
 
   .row-fluid {
