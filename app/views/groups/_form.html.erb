@@ -12,14 +12,16 @@
     </div>
   <% end %>
 
+
+
 	<%= f.label :name %>
-  <%= f.text_field :name%>
+  <%= f.text_field :name, :class => "field span6" %>
  
 
 
 
   <%= f.label :about %>
-  <%= f.text_area :about%>
+  <%= f.text_area :about, :class => "field span6"%>
   
 
    	<div class="controls">
@@ -42,7 +44,11 @@
 
 
 
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+   <div class="form-actions">
+    <%= f.submit "Submit", :class => 'btn' %> - 
+  <%= link_to "Cancel", root_path%>
+   </div>
+
+
+
 <% end %>

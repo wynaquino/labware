@@ -39,23 +39,8 @@
   <div class="row">
 			<div class="span4">	  
 
-		        <div class="well"> 
-<p><small> created <%= distance_of_time_in_words_to_now(@group.created_at)  %> ago by <%= link_to @group.user.username, user_path(@group.user) %></small></p>
-					<h2><%= @group.name %>		
-	
-	<% if user_signed_in? %>
-	<% if @group.user_id == current_user.id %>
-			<%= link_to edit_group_path(@group) do %>
-				  <i class="icon-edit"></i>
-			<% end %>
-	<% end %>
-	<% end %>
-			</h2>
-					
-					<p><%= @group.about%></p>
-					
-					
-			</div>
+		  		<%= render 'shared/group_title'%>
+		
 				
 				
 			

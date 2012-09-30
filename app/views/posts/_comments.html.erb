@@ -1,12 +1,11 @@
 
 <div class="span7">
 
-<div class="page-header">
-<h1><small>Comments </small></h1>
+<h2><small>Discussion (<%= @post.comment_threads.count %>) <% if user_signed_in? %>
+- <%=link_to "Leave Comment?", new_post_comment_path(@post), :class => "btn"%> 
+<% end %></small> </h2>
+<hr>
 </div>
-
-</div>
-
 
 
 
@@ -21,7 +20,33 @@
 	
 
 <% show_comments_with_children(@post.root_comments) do |comment|%>
-   <%= render "comment_replies", :comment => comment %>
+
+<p><small>
+
+<% if @post.user.username == comment.user.username %>	
+	-> <% end %>
+	<%= link_to comment.user.username, user_path(comment.user.username) %>   
+
+
+   <%= distance_of_time_in_words_to_now(comment.created_at)  %> 
+
+	<% if user_signed_in?%>
+	- <%= link_to "reply", post_comment_new_reply_path(:post_id => @post, :comment_id => comment.id) %> 
+	<% end %>
+
+	<% if user_signed_in?%>
+	<% if current_user.username == comment.user.username %>
+	<%= link_to "edit", edit_post_comment_path(:post_id => @post, :id => comment.id) %>
+	<% end %>
+	<% end %>
+	</small></p>
+	<%= sanitize(textilize(comment.body )) %>
+
+
+
+
+
+
 <%end%>
 
 

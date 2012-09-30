@@ -1,11 +1,41 @@
 <p id="notice"><%= notice %></p>
 
-
 	
 	<div class="span7">
 
- <h3 class="title"><%= link_to @post.title, group_post_path(params[:group_id], @post) %> </h3>
-	  <p><small><%= link_to @post.group.name, group_path(@post.group)%>    <%= distance_of_time_in_words_to_now(@post.created_at)  %> ago by <%= link_to @post.user.username, user_path(@post.user.username) %> (+21 thumbs up/ 50 comments)</small></p>	
+ <h3 class="title">	
+
+
+			
+<% if !@post.link.blank? %>
+
+			<a href="<%= @post.link %>" i class="icon-share" target="_blank"></a>
+			
+			
+		<% end %>
+		
+		
+		<%= link_to @post.title, group_post_path(params[:group_id], @post) %> 	</h3>
+	  <p>			<small>
+		
+		<%= link_to "", :back, :class=> "icon-step-backward", :title=> "go back", :rel => "tooltip" %>
+		
+	
+		
+	<%= link_to @post.group.name, group_path(@post.group)%>    <%= distance_of_time_in_words_to_now(@post.created_at)  %> ago by <%= link_to @post.user.username, user_path(@post.user.username) %> 
+		
+		
+		<% if user_signed_in? %>
+		
+			<% if @post.user_id == current_user.id %>
+		- <%=link_to "edit", edit_group_post_path(@group, @post)%>
+			<% end %>
+			<% end %>
+			
+			
+			
+		
+		</small></p>	
 	
     <%= sanitize(textilize(@post.content)) %>
     
@@ -31,14 +61,7 @@
 			
 				
 				
-				<p>	
-				
-	<% if user_signed_in? %>
-	<%=link_to "Leave Comment?", new_post_comment_path(@post), :class => "btn"%> 
-	<% if @post.user_id == current_user.id %>
-<%=link_to "Edit post", edit_group_post_path(@group, @post), :class => "btn"%>
-	<% end %>	<% end %>
-					</p>
+
 				
 
 	        </div>

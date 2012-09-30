@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120812153156) do
+ActiveRecord::Schema.define(:version => 20120923223238) do
 
   create_table "comments", :force => true do |t|
     t.integer  "commentable_id",   :default => 0
@@ -50,16 +50,17 @@ ActiveRecord::Schema.define(:version => 20120812153156) do
   add_index "groups_users", ["user_id", "group_id"], :name => "index_groups_users_on_user_id_and_group_id"
 
   create_table "posts", :force => true do |t|
-    t.string   "title",      :default => "",    :null => false
-    t.text     "content",    :default => "",    :null => false
-    t.datetime "created_at",                    :null => false
-    t.datetime "updated_at",                    :null => false
-    t.integer  "group_id",                      :null => false
-    t.integer  "user_id",                       :null => false
-    t.boolean  "is_sticky",  :default => false
-    t.boolean  "is_locked",  :default => false
-    t.boolean  "is_draft",   :default => false
-    t.string   "link",       :default => ""
+    t.string   "title",           :default => "",    :null => false
+    t.text     "content",         :default => "",    :null => false
+    t.datetime "created_at",                         :null => false
+    t.datetime "updated_at",                         :null => false
+    t.integer  "group_id",                           :null => false
+    t.integer  "user_id",                            :null => false
+    t.boolean  "is_sticky",       :default => false
+    t.boolean  "is_locked",       :default => false
+    t.boolean  "is_draft",        :default => false
+    t.string   "link",            :default => ""
+    t.datetime "post_updated_at"
   end
 
   add_index "posts", ["group_id"], :name => "index_posts_on_group_id"

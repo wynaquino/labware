@@ -1,5 +1,5 @@
 	
- <% @num = 1%>	
+ <% @num = posts.count%>	
 
  <% for post in posts %>	
 
@@ -7,13 +7,13 @@
 <div class="row">
 	
 	<div class="span1">
-	  <p> <small> <%= @num %> | </small>
+	  <p> <small> <%= @num %> | +21</small>
 		
 		<% if !post.link.blank? %>
 
 			<a href="<%= post.link %>" i class="icon-share" target="_blank"></a>
-			
-			
+
+		
 		<% end %>
 		
 		</p>
@@ -23,12 +23,12 @@
 
 	<div class="span6">
  <h3 class="title"><%= link_to post.title, group_post_path(post.group, post) %> </h3>
-	  <p><small><%= link_to post.group.name, group_path(post.group)%> | <%= distance_of_time_in_words_to_now(post.created_at)  %> ago by <%= link_to post.user.username, user_path(post.user) %> (<%= post.comment_threads.count %> comments)</small></p>	
+	  <p><small><%= link_to post.group.name, group_path(post.group)%> | <%= distance_of_time_in_words_to_now(post.created_at)  %> ago by <%= link_to post.user.username, user_path(post.user.username) %> (<%= post.comment_threads.count %> comments)</small></p>	
 	
 	</div>
 	
 	</div>
 	
-	 <% @num += 1  %>
+	 <% @num -= 1  %>
 	
 <% end %>

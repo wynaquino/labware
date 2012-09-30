@@ -1,13 +1,23 @@
-	<div class="span7">
-	 		<div class="btn-toolbar">
-        	<div class="btn-group">
-            <button class="btn btn-mini">Filter</button>
-            <button class="btn btn-mini dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></button>
-          	<ul class="dropdown-menu">
-            	<li><a href="#">Latest</a></li>
-            	<li><a href="#">Most Commented</a></li>
-            	<li><a href="#">Highest Rated</a></li>
-	        </ul>
-            </div><!-- /btn-group -->
-            </div><!-- /btn-toolbar -->
-	</div>
+
+
+<div class="btn-group">
+
+
+	 <button class="btn dropdown-toggle btn-small" data-toggle="dropdown">Filter posts <span class="caret"></span></button>
+      <ul class="dropdown-menu">
+        <li><a href="#">Action</a></li>
+        <li><a href="#">Another action</a></li>
+        <li><a href="#">Something else here</a></li>
+        <li class="divider"></li>
+        <li><a href="#">Separated link</a></li>
+      </ul>
+
+<% if !@group.nil? %>
+  <button class="btn btn-small"><%=link_to "New post", new_group_post_path(@group.id) %> </button>
+<% end %>
+
+</div>
+
+
+
+

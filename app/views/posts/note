@@ -1,64 +1,22 @@
 
 
+<p><small>
+
+<% if @post.user.username == comment.user.username %>	
+	-> <% end %>
+	<%= link_to comment.user.username, user_path(comment.user.username) %>   
 
 
+   <%= distance_of_time_in_words_to_now(comment.created_at)  %> 
 
-	<div class="span7 offset1-1 pcomment">
-<% @comment1 = comment.children%>
-	<% for comment in @comment1 %>
-		 <%= render "comment_replies", :comment => comment %>
-		
-			<div class="span7 offset1-1 pcomment">
-		<% @comment2 = comment.children%>
-			<% for comment in @comment2 %>
-		 <%= render "comment_replies", :comment => comment %>
-							
-					<div class="span7 offset1-1 pcomment">
-				<% @comment3 = comment.children%>
-					<% for comment in @comment3 %>
-				 <%= render "comment_replies", :comment => comment %>
-									
-						<div class="span7 offset1-1 pcomment">
-						<% @comment4 = comment.children%>
-							<% for comment in @comment4 %>
-						 <%= render "comment_replies", :comment => comment %>
-
-
-
-
-									<% end %>
-								</div>
-						<% end %>
-					</div>
-				<% end %>
-			</div>
+	<% if user_signed_in?%>
+	- <%= link_to "reply", post_comment_new_reply_path(:post_id => @post, :comment_id => comment.id) %> 
 	<% end %>
-</div>
 
------show posts.
-
-	 <% @num = 1%>	
-	 <% for post in @group.posts %>	
-
-		<div class="span1">
-		  <p> <%= @num %> 
-
-			<% if !post.link.blank? %>
-
-				<a href="http://<%= post.link %>" i class="icon-share" target="_blank"></a>
-
-
-			<% end %>
-
-			</p>
-		</div>	
-
-		<div class="span6">
-
-	 <h3 class="title"><%= link_to post.title, group_post_path(@group, post) %> </h3>
-		  <p><small><%= distance_of_time_in_words_to_now(post.created_at)  %> ago by <%= link_to post.user.username, user_path(post.user) %> (+21 thumbs up/ <%= post.comment_threads.count %> comments)</small></p>	
-
-		</div>
-		 <% @num = @num + 1  %>
-
+	<% if user_signed_in?%>
+	<% if current_user.username == comment.user.username %>
+	<%= link_to "edit", edit_post_comment_path(:post_id => @post, :id => comment.id) %>
 	<% end %>
+	<% end %>
+	</small></p>
+	<%= sanitize(textilize(comment.body )) %>
