@@ -1,7 +1,14 @@
 <h1>Editing group</h1>
 
-<%= render 'form' %>
 
-<%= link_to 'Show', @group %> |
-<%= link_to 'Back', groups_path %>
-<%= link_to 'Destroy', @group, confirm: 'Are you sure?', method: :delete %>
+<%= form_for @group, :url => group_path, :html => { :multipart => true } do |f| %>
+
+
+<%= render 'form', :f => f  %>
+<% end %>
+
+
+
+
+<%= link_to 'Destroy', group_path(:id => @group.id), confirm: 'Are you sure?', method: :delete %>
+

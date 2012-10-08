@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h3><%= link_to  @asset.user.username, user_path(@asset.user.username)%> : 
+	
+
+	<%= link_to "photos", user_assets_path(@asset.user.username) %> : <%= @asset.title %>
+	</h3>
+
+
+<p><small>uploaded <%= distance_of_time_in_words_to_now(@asset.created_at)  %></p></small>
+
+  <img src='<%= @asset.photo.url(:med) %>'>
+
+
+
+</br></br>
+
+
+
+<% if user_signed_in? %>
+
+<% if current_user.username == @asset.user.username%>
+
+        <%= link_to "delete?", user_asset_path(@asset.user.username, @asset.id), :method => "delete",  :confirm => "This image will be deleted. Are you sure?"%>
+
+<% end %>
+<% end %>

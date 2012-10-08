@@ -23,8 +23,7 @@ class ApplicationController < ActionController::Base
 
    def check_view_access
      @post = Post.find(params[:id])
-      @group = @post.group
-     #@group = Group.find_by_url(params[:group_id])
+     @group = @post.group
 
      if user_signed_in?
        if @post.group.is_private == true and current_user.id != @post.user_id

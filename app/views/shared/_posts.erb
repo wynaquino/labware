@@ -1,4 +1,14 @@
 	
+	
+	<% if posts.empty? %>
+	<div class="row">
+		<div class="span8">
+			create some content?
+			</div></div>
+	
+	<% else %>
+	
+	
  <% @num = posts.count%>	
 
  <% for post in posts %>	
@@ -31,4 +41,4 @@
 	
 	 <% @num -= 1  %>
 	
-<% end %>
+<% end %><% end %>

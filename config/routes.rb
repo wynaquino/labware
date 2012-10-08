@@ -10,7 +10,9 @@ Labware::Application.routes.draw do
 
   
   devise_for :users, :layout => "devise"
-  resources :users
+  resources :users do
+      resources :assets
+  end
 
   resources :posts do
     resources :comments do

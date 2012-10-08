@@ -1,0 +1,32 @@
+<h3><%= link_to @user.username, user_path(@user.username)%> : photos</h3>
+
+
+
+
+
+
+</br>
+
+
+<ul class="thumbnails">
+	
+ 	<% @user_assets.each do |asset| %>
+
+ <li class="span2">
+	<%= link_to image_tag(asset.photo.url(:thumb)), user_asset_path(asset.user.username, asset), :class=>"thumbnail" %>
+  </li>
+
+<% end %>
+</ul>
+
+
+
+
+
+<% if user_signed_in? %>
+
+<% if current_user.username == @user.username%>
+<%= render "form", :file => @file %>
+
+<% end %>
+<% end %>

@@ -1,0 +1,24 @@
+<%= form_for(@user) do |f| %>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+      <% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+  <%= f.label :about %>
+  <%= f.text_area :about, :class => "field span6"%>
+
+
+
+   <div class="form-actions">
+    <%= f.submit "Submit", :class => 'btn' %> - 
+  <%= link_to "Cancel", root_path%>
+   </div>
+<% end %>

@@ -1,5 +1,9 @@
 
-<%= form_for(@group) do |f| %>
+
+
+
+
+
   <% if @group.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@group.errors.count, "error") %> prohibited this group from being saved:</h2>
@@ -23,6 +27,20 @@
   <%= f.label :about %>
   <%= f.text_area :about, :class => "field span6"%>
   
+
+  <%= f.label :avatar %>
+
+<%= f.file_field :avatar %>
+
+<% if !(@group.avatar.content_type =~ /^image/).nil? %>
+
+<a href="#" rel="popover" 
+					data-content="<img src='<%= @group.avatar.url(:med)%>'>"><img src="<%= @group.avatar.url(:thumb)%>"> </a> 
+
+<% end %>
+
+
+
 
    	<div class="controls">
      <label class="checkbox">
@@ -51,4 +69,5 @@
 
 
 
-<% end %>
+
+

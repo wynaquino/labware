@@ -12,8 +12,9 @@
         <li><a href="#">Separated link</a></li>
       </ul>
 
+
 <% if !@group.nil? %>
-  <button class="btn btn-small"><%=link_to "New post", new_group_post_path(@group.id) %> </button>
+<%=link_to "New post", new_group_post_path(@group.id), :class => "btn btn-small" %> 
 <% end %>
 
 </div>

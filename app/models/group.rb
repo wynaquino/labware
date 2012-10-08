@@ -1,7 +1,10 @@
 class Group < ActiveRecord::Base
     acts_as_url :name
   
-    attr_accessible :about, :name, :is_private, :created_at, :updated_at, :user_id, :frontpage
+    has_attached_file :avatar, :styles => {:med => "300x300>", :thumb => "15x15>" }
+  
+  
+    attr_accessible :about, :name, :is_private, :created_at, :updated_at, :user_id, :frontpage, :avatar
     
     validates :name, :presence => true, :uniqueness => true, :length => {:within => 3..50 }
     

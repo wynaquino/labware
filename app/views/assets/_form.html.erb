@@ -1,0 +1,17 @@
+<div class="well">
+
+     <h3>upload photo</h3>
+
+			<%= form_for :file, :html => { :multipart => true } do |f| %>
+				
+			<%= f.label :title %>
+				<%= f.text_field :title, :class => "field span6" %></p>	
+            	
+		 <%= f.file_field :photo %>
+		
+		 <div class="form-actions">
+<%= f.submit "Upload" %>
+</div>
+
+			<% end %>
+</div>

@@ -7,17 +7,59 @@
 					</br>		
 			        <div class="well"> 	
 	
+					
+
+						     
+ 
 	
-	<h4><b><%= @user.username %></b><small> <%= distance_of_time_in_words_to_now(@user.last_sign_in_at) %></small>  </h4> 
+	
+	
+	
+	<h4>				
+		
+		<% if !(@user.avatar.content_type =~ /^image/).nil? %>
+		
+			<a href="#" rel="popover" 
+								data-content="<img src='<%= @user.avatar.url(:med)%>'>"><img src="<%= @user.avatar.url(:thumb)%>"> </a> 
+								
+							<% end %>	
+								
+								<b><%= @user.username %></b><small> <%= distance_of_time_in_words_to_now(@user.last_sign_in_at) %></small>  </h4> 
 	<p> <%= @user.about%></p>
-	<p> status message</p>	
+	
+		
+		
+		
+
+					
 		
 	
-
-												<h4>sections</h4>										
+		
+		
+		<% for p in @user.assets %>
+		
+		
+		<% end %>
+		
+	
+<h4>photos <small> <a href="<%= user_assets_path(@user.username) %>" i class="icon-picture"></a>(<%=@user.assets.count%>) </small></h4>
+												<h4>moderator</h4>										
 											      <ul class="unstyled">
 					<% for g in @user.groups %>
-						<li> <img src="http://placehold.it/15x15" alt="">																		
+						<li> 	
+							
+							
+							<% if !(g.avatar.content_type =~ /^image/).nil? %>
+						
+							
+							
+								<a href="#" rel="popover" 
+													data-content="<img src='<%= g.avatar.url(:med)%>'>"><img src="<%= g.avatar.url(:thumb)%>"> </a>
+							
+													<% end %>
+							
+							
+																									
 						<%= link_to g.name.capitalize, group_path(g)  %>
 						</li>	   
 										     <% end %>

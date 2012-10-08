@@ -3,11 +3,29 @@
   <head>
     <meta charset="utf-8">
   <title><%= title %></title>
-<%= csrf_meta_tag %>
-  <%= stylesheet_link_tag    "application", "bootstrap", "bootstrap-responsive", :media => "all" %>
-  <%= javascript_include_tag "application", "bootstrap-typeahead", "bootstrap-carousel", "bootstrap-collapse", "bootstrap-button", "bootstrap-popover", "bootstrap-tooltip", "bootstrap-tab", "bootstrap-scrollspy", "bootstrap-dropdown", "bootstrap-modal", "bootstrap-alert", "bootstrap-transition", "bootstrap-tooltip", "jquery" %>
 
+
+  <%= stylesheet_link_tag    "application", "bootstrap", "bootstrap-responsive", :media => "all" %>
+  <%= javascript_include_tag  "jquery","bootstrap-tooltip", "bootstrap-popover", "bootstrap-typeahead", "bootstrap-carousel", "bootstrap-collapse", "bootstrap-button", "bootstrap-tab", "bootstrap-scrollspy", "bootstrap-dropdown", "bootstrap-modal", "bootstrap-alert", "bootstrap-transition", "application" %>
     <!-- Le styles -->
+	
+ <%= javascript_include_tag "http://twitter.github.com/bootstrap/1.4.0/bootstrap-twipsy.js" %>
+ <%= javascript_include_tag "http://twitter.github.com/bootstrap/1.4.0/bootstrap-popover.js" %>
+
+	<%= csrf_meta_tag %>
+ <script>
+ $(function () {
+     $("a[rel=popover]")
+     .popover({
+        html: true, placement: 'right'
+     })
+     .click(function(e) { 
+            e.preventDefault()
+     })
+  });
+ </script>
+
+
     <style>
       body {
         padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */

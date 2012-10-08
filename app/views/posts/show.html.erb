@@ -37,14 +37,14 @@
 		
 		</small></p>	
 	
-    <%= sanitize(textilize(@post.content)) %>
+    <%= raw(textilize(@post.content)) %>
     
 
 	</div>
 
-	
+	<% if !@post.is_locked? %>
 <%= render "comments"%>
-	
+	<% end %>
 	
 	
 	</div>	
