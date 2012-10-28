@@ -7,8 +7,6 @@ class AssetsController < ApplicationController
     @file = Asset.new
   end
 
-  # GET /assets/1
-  # GET /assets/1.json
   def show
     @asset = Asset.find(params[:id])
     @user = User.find_by_id(@asset.user.id)
@@ -29,7 +27,6 @@ class AssetsController < ApplicationController
       end
     end
   end
-
  
   def destroy
     @asset = current_user.assets.find(params[:id])

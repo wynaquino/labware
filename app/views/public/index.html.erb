@@ -4,8 +4,28 @@
 		
 		
 		
-			<%= render :partial => "shared/posts", :locals => { :posts => @posts }%>
 
+  <div class="well"> <p><b>Welcome to Labware,</b> a place to create and share content.</p>
+
+	
+	
+	
+	<% for g in @groups%>
+	<% if !(g.avatar.content_type =~ /^image/).nil? %>
+		
+		
+		<a href="<%= group_path(g)%>" rel="popover" 
+							data-content="<img src='<%= g.avatar.url(:med)%>'>">
+							
+							<img src="<%= g.avatar.url(:thumb)%>" class='img-polaroid'> 
+		</a>	
+	
+	
+	<% end %>
+	<% end %>
+	
+	
+	</div>
 
 	
 	
@@ -17,16 +37,5 @@
 	
 	</div>
 
-	  <div class="row">
-				<div class="span4">	  
 
- 			        <div class="well"> <p><b>Welcome to Labware,</b> a place to create and share content.</p></div>
-					
-					
-					
-			      
-
-
-
-		        </div>
    

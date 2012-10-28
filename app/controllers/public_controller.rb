@@ -3,7 +3,11 @@ class PublicController < ApplicationController
     
     @title = 'Welcome!'
     #@posts = Post.find(:all, :order => "created_at DESC", :limit => 10)
-    @posts = Post.all :joins => :group, :conditions => {:groups => {:frontpage => true}}
+    #@posts = Post.all :joins => :group, :conditions => {:groups => {:frontpage => true}}
+    
+    #@posts = Post.all :order => "created_at ASC", :joins => :group, :conditions => {:groups => {:frontpage => true, :name => "frontpage"}}
+    
+    @groups = Group.all :conditions => ["frontpage == 't'"], :order => "name ASC"
   end
 
   def about

@@ -1,0 +1,33 @@
+	
+	
+	<% if comments.empty? %>
+	<div class="row">
+		<div class="span8">
+			create some content?
+			</div></div>
+	
+	<% else %>
+	
+	
+ <% @num = comments.count%>	
+
+ <% for c in comments %>	
+
+<div class="row">
+	
+	<div class="span1">
+	  <p> <small> <%= @num %></small>	</p>
+	</div>
+
+
+	<div class="span6">
+ <p> (<%= link_to c.commentable.group.name, group_path(c.commentable.group)%>) <%= link_to truncate(c.body, :length => 80), group_post_path(c.commentable.group, c.commentable)  %> </p>
+	  
+	
+	</div>
+	
+	</div>
+	
+	 <% @num -= 1  %>
+	
+<% end %><% end %>

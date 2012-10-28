@@ -9,10 +9,19 @@ module ApplicationHelper
   end
   
   def getGroupsToolbar
-    @groups = Group.find(:all, :order => "created_at ASC", :limit => 5)
+    @groups = Group.find(:all, :conditions => ["frontpage = 't'"], :order => "created_at ASC", :limit => 5)
     return  @groups
   end
   
+  def getPic(content)
+    
+    return content[/!(.*?)!/i,1]
+      
+  end
+  
+  
+
+    
   def title
     base_title = "Labware"
     if @title.nil?

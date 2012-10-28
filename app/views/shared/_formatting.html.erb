@@ -1,4 +1,46 @@
-         <p><small> type the following for special formatting. ex. 'h1. hello' will make hello letters large. *hello*, asterisks will make hello bold.  </small> <br/>
+    
+<p>copy and paste picture address for your content </p>
+
+   <ul class="thumbnails">
+
+		<script type="text/javascript">
+		function SelectAll(id)
+		{
+		    document.getElementById(id).focus();
+		    document.getElementById(id).select();
+		}
+		</script>
+
+<% @num= '0'%>
+
+
+<% for p in current_user.assets%>
+
+ <li class="span8">
+
+
+	
+		<a href="<%=user_asset_path(p.user.username, p)%>"  rel="popover" 
+							data-content="<img src='<%= p.photo.url(:thumb)%>'>">
+							
+							<img src="<%= p.photo.url(:thumb_s, false)%>" class='img-polaroid'> 
+		</a>
+	
+	
+	:
+	
+	
+	<input  id="txtfield<%=@num%>" value="!<%=root_url.sub(/\/$/, '')+p.photo.url %>!" size="60" type="text" onClick="SelectAll('txtfield<%=@num%>');"/> 
+  </li>
+<%@num += '1'%>
+<% end %>
+
+</ul>
+
+
+
+
+  <p><small> type the following for special formatting. ex. 'h1. hello' will make hello letters large. *hello*, asterisks will make hello bold.  </small> <br/>
 	headers (h1.,h2.,h3.)  </p>
          <p>text formatting block quote,  (bq., _italic_, *bold*, +underline+, %{color:red}red_text%, </p>
          <p>'#' will make a numbered list. '##' will indent number list <br/> use * for bulleted lists, ** for sub bullet </p>

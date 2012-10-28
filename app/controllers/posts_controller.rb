@@ -3,16 +3,9 @@ class PostsController < ApplicationController
   before_filter :authenticate_user!, :except => [:show]
   before_filter :check_view_access, :only => [:show]
   
-  
-  # GET /posts/1
-  # GET /posts/1.json
-
-  
   def show
-    @post = Post.find(params[:id])
+    @post = Post.find(params[:id])  
     @group = Group.find_by_url(params[:group_id])
-    
-   # @group = Group.find(@post.group_id)
     
     respond_to do |format|
       format.html # show.html.erb
@@ -20,8 +13,6 @@ class PostsController < ApplicationController
     end
   end
 
-  # GET /posts/new
-  # GET /posts/new.json
   def new
     @post = Post.new
 
@@ -36,15 +27,11 @@ class PostsController < ApplicationController
     @post = current_user.posts.find(params[:id])
   end
 
-  # POST /posts
-  # POST /posts.json
   def create
     @group = Group.find(params[:group_id])
     @post = @group.posts.build(params[:post])
     @post.user_id = current_user.id
 
-    #look into this.
-    
     respond_to do |format|
       if @post.save
         format.html { redirect_to group_path(@group), notice: 'Post was successfully created.' }

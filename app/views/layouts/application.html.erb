@@ -6,11 +6,13 @@
 
 
   <%= stylesheet_link_tag    "application", "bootstrap", "bootstrap-responsive", :media => "all" %>
-  <%= javascript_include_tag  "jquery","bootstrap-tooltip", "bootstrap-popover", "bootstrap-typeahead", "bootstrap-carousel", "bootstrap-collapse", "bootstrap-button", "bootstrap-tab", "bootstrap-scrollspy", "bootstrap-dropdown", "bootstrap-modal", "bootstrap-alert", "bootstrap-transition", "application" %>
+  <%= javascript_include_tag  "jquery","bootstrap-tooltip", "bootstrap-popover", "bootstrap-typeahead", "bootstrap-carousel", "bootstrap-collapse", "bootstrap-button", "bootstrap-tab", "bootstrap-scrollspy", "bootstrap-dropdown", "bootstrap-modal", "bootstrap-alert", "bootstrap-transition", "application"  %>
     <!-- Le styles -->
 	
  <%= javascript_include_tag "http://twitter.github.com/bootstrap/1.4.0/bootstrap-twipsy.js" %>
  <%= javascript_include_tag "http://twitter.github.com/bootstrap/1.4.0/bootstrap-popover.js" %>
+
+
 
 	<%= csrf_meta_tag %>
  <script>
@@ -20,7 +22,7 @@
         html: true, placement: 'right'
      })
      .click(function(e) { 
-            e.preventDefault()
+            e()
      })
   });
  </script>

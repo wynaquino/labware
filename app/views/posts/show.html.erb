@@ -44,6 +44,8 @@
 
 	<% if !@post.is_locked? %>
 <%= render "comments"%>
+
+
 	<% end %>
 	
 	
@@ -56,6 +58,23 @@
 
   <div class="row">
 			<div class="span4">	  
+
+
+				<div class="btn-group">
+
+
+
+				<% if user_signed_in? %>
+					 <button class="btn dropdown-toggle btn-small" data-toggle="dropdown">Filter <span class="caret"></span></button>
+			      <ul class="dropdown-menu">
+			        <li><a href="<%= comments_sort_newest_path(@post)%>">Comments (newest first)</a></li>
+			        <li><a href="<%=comments_sort_oldest_path(@post)%>">Comments (oldest first)</a></li>
+			      </ul>
+				
+				
+				<%=link_to "Leave comment?", new_post_comment_path(@post), :class => "btn btn-small"%>
+				<% end %></div>
+ <br/>
 
 		     	<%= render 'shared/group_title'%>
 			

@@ -1,62 +1,80 @@
+
 <ul class="nav">
   <% @groups = getGroupsToolbar %>
 
  <% for g in @groups %>
- <li >
- <%= link_to g.name, group_path(g), :class => "''"%></li>
+ <li ><%= link_to g.name, group_path(g), :class => "''"%></li>
  
 <% end %>
- 
-
 </ul>
 
 
 
-	    <ul class="nav pull-right">        
+
 
 
 <% if user_signed_in? %>
 
 
 
-
+<ul class="nav pull-right">        
 
 
 				 <li class="dropdown">
-		  <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <i class="icon-home icon-white"></i>  <b class="caret"></b></a>
+		  <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <i class=" icon-book icon-white"></i>  <b class="caret"></b></a>
  
-
-
-
  <ul class="dropdown-menu">
-
- <li><a href="<%= user_path(current_user.username)%>"><i class="icon-home icon"></i> Your page</a></li>
-
- <li><a href="<%= edit_user_path(current_user)%>"><i class="icon-book"></i> Edit settings</a></li>
-
- <li><a href="<%= new_group_path%>"><i class=" icon-plus-sign"></i> Create section</a></li>
-
-    
+<li> <%=  "-- Subscriptions --"%></li>
 
 
-<li><a href="<%= user_assets_path(current_user.username) %>"><i class="icon-picture"></i> Manage photos</a></li>
 
-
-	
-<li class="divider"></li>
-
-      <li> <%= link_to "Sign out", destroy_user_session_path, :method => :delete %> </li>
+ 	<% for g in current_user.subscriptions %>
+	 <li ><%= link_to g.group.name.downcase, group_path(g.group)%></li>
+	<% end %>
 
 
 
 
   </ul>
 </li>
+
+
+	 <li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown"> <i class="icon-home icon-white"></i>  <b class="caret"></b></a>
+
+<ul class="dropdown-menu">
+
+<li><a href="<%= user_path(current_user.username)%>"><i class="icon-home icon"></i> Your page</a></li>
+
+<li><a href="<%= edit_user_path(current_user)%>"><i class="icon-book"></i> Edit settings</a></li>
+
+<li><a href="<%= new_group_path%>"><i class=" icon-plus-sign"></i> Create section</a></li>
+
+
+
+
+<li><a href="<%= user_assets_path(current_user.username) %>"><i class="icon-picture"></i> Manage photos</a></li>
+
+
+
+<li class="divider"></li>
+
+<li> <%= link_to "Sign out", destroy_user_session_path, :method => :delete %> </li>
+
+
+
+
+</ul>
+</li>
+
 <% else %>
+
+<ul class="nav pull-right">        
+
 <li class="divider-vertical"></li>
 
 <li><%= link_to "Sign in", new_user_session_path%></li>
 <li><%= link_to "Sign up", new_user_registration_path%></li>
+</ul>
 
 <% end %>
-      </ul>

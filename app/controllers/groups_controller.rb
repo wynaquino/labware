@@ -1,40 +1,19 @@
 class GroupsController < ApplicationController
-  # GET /groups
-  # GET /groups.json
+  helper :all
 
   #layout "devise"
   before_filter :authenticate_user!, :except => [:index, :show]
+  before_filter :group_access, :only => [:show]
   around_filter :catch_not_found, :except => [:index, :new]
   
-
-  # GET /groups/1
-  # GET /groups/1.json
   def show
     @group = Group.find_by_url(params[:id])
-
-   if user_signed_in?
-      if @group.is_private == true and current_user.id == @group.user_id
-        return
-      end
-      
-      if @group.is_private == true and current_user.id != @group.user_id
-        render "show_noaccess"
-      end
-    end
-
-    if !user_signed_in?
-      if @group.is_private == false
-      
-      end
-      
-      if @group.is_private == true 
-        render "show_noaccess"
-      end
-    end    
+    @posts = @group.posts.order("created_at DESC")
   end
 
-  # GET /groups/new
-  # GET /groups/new.json
+
+
+
   def new
     @group = Group.new
 
@@ -46,19 +25,11 @@ class GroupsController < ApplicationController
 
   # GET /groups/1/edit
   def edit
-    #@group = Group.find(params[:id])
     @group = current_user.groups.find_by_url(params[:id])
- 
-    end
+  end
 
-  # POST /groups
-  # POST /groups.json
   def create
-    #@group = Group.new(params[:group])
-
     @group = current_user.groups.build(params[:group])
-
-
     respond_to do |format|
       if @group.save
         format.html { redirect_to user_path(current_user.username), notice: 'Group was successfully created.' }
@@ -70,10 +41,7 @@ class GroupsController < ApplicationController
     end
   end
 
-  # PUT /groups/1
-  # PUT /groups/1.json
   def update
-    #@group = Group.find(params[:id])
     @group = current_user.groups.find_by_url(params[:id])
 
     respond_to do |format|
@@ -89,8 +57,6 @@ class GroupsController < ApplicationController
     
   end
 
-  # DELETE /groups/1
-  # DELETE /groups/1.json
   def destroy
     #@group = Group.find(params[:id])
     @group = current_user.groups.find(params[:id])
@@ -99,9 +65,7 @@ class GroupsController < ApplicationController
     redirect_to user_path(current_user.username), notice: 'Group was successfully removed.' 
     else
       redirect_to root_path, :flash => { :notice => "Record not found." }
-    end
-    
-      
+    end     
   end
   
   private
@@ -112,6 +76,4 @@ class GroupsController < ApplicationController
       redirect_to root_path, :flash => { :notice => "Record not found." }
   end
 
-  
-  
 end

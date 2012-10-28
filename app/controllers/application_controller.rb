@@ -1,5 +1,6 @@
 
 class ApplicationController < ActionController::Base
+  include UsersHelper, GroupsHelper
   protect_from_forgery
   #test for forum
 
@@ -11,6 +12,29 @@ class ApplicationController < ActionController::Base
      redirect_to root_path, notice: 'Opps....something went wrong'
    end
    
+   def group_access
+     @group = Group.find_by_url(params[:id])
+     
+     if user_signed_in?
+        if @group.is_private == true and current_user.id == @group.user_id
+          return
+        end
+
+        if @group.is_private == true and current_user.id != @group.user_id
+          render "show_noaccess"
+        end
+      end
+
+      if !user_signed_in?
+        if @group.is_private == false
+          return
+        end
+
+        if @group.is_private == true 
+          render "show_noaccess"
+        end
+      end
+   end
    
    
    def get_post
@@ -26,10 +50,11 @@ class ApplicationController < ActionController::Base
      @group = @post.group
 
      if user_signed_in?
+       if @post.group.is_private == true and current_user.id == @post.group.user_id
+         return
+       end
        if @post.group.is_private == true and current_user.id != @post.user_id
          render "/groups/show_noaccess"
-       else
-         return
        end
      end
 

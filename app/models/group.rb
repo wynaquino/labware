@@ -16,8 +16,11 @@ class Group < ActiveRecord::Base
       
     
     belongs_to :user
-    has_many :posts, :order => 'updated_at DESC', :dependent => :destroy
+    #belongs_to :subscription
     
+    has_many :posts, :dependent => :destroy
+    #has_many :users, :through => :subscriptions
+    has_many :subscriptions
     #accepts_nested_attributes_for :posts
     
     def to_param

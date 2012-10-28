@@ -1,8 +1,10 @@
 class UsersController < ApplicationController
+
+
   # GET /users
   # GET /users.json
   
- # before_filter :authenticate_user!, :except => [:index, :show]
+  before_filter :authenticate_user!, :except => [:index, :show]
  # layout "devise"
   
 
@@ -11,7 +13,7 @@ class UsersController < ApplicationController
   # GET /users/1.json
   def show
     @user = User.find_by_username(params[:id])
-
+    @posts = @user.posts.order("created_at DESC")
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @user }
@@ -53,8 +55,6 @@ class UsersController < ApplicationController
     end
   end
 
-  # PUT /users/1
-  # PUT /users/1.json
   def update
     @user = current_user
 
@@ -68,9 +68,5 @@ class UsersController < ApplicationController
       end
     end
   end
-
-  # DELETE /users/1
-  # DELETE /users/1.json
-
 
 end
