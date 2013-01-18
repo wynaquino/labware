@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121009003114) do
+ActiveRecord::Schema.define(:version => 20121028175256) do
 
   create_table "assets", :force => true do |t|
     t.datetime "created_at",                         :null => false
@@ -76,6 +76,7 @@ ActiveRecord::Schema.define(:version => 20121009003114) do
     t.boolean  "is_draft",        :default => false
     t.string   "link",            :default => ""
     t.datetime "post_updated_at"
+    t.string   "post_uuid"
   end
 
   add_index "posts", ["group_id"], :name => "index_posts_on_group_id"

@@ -4,8 +4,26 @@
 
 
 <hr>
-<p><small>Discussion (<%= @post.comment_threads.count %>) <% if user_signed_in? %>
-<% end %></small> </p>
+
+<div class="btn-toolbar">
+
+
+
+   <div class="btn-group">
+<a class="btn btn-small" ><i class="icon-user icon"></i>(10) Discussion filter</a>
+       <a class="btn btn-small dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"></span></a>
+       <ul class="dropdown-menu">
+         <li><%= link_to "latest comments", group_post_latest_comments_path(:group_id => @post.group, :post_id => @post) %></li>
+          <li><%= link_to "oldest comments", group_post_oldest_comments_path(:group_id => @post.group, :post_id => @post) %></li>
+          <li><%= link_to "highest voted comments", group_post_highest_voted_comments_path(:group_id => @post.group, :post_id => @post) %></li>       </ul>
+</div>
+
+<div class="btn-group">
+	<%=link_to "Leave comment?", new_post_comment_path(@post.post_uuid), :class => "btn btn-small"%> 
+   </div>
+
+
+</div>
 
 </div>
 
@@ -21,7 +39,7 @@
 
 	
 
-<% show_comments_with_children(@post.root_comments) do |comment|%>
+<% show_comments_with_children(@comments) do |comment|%>
 
 <p><small>
 
@@ -33,16 +51,29 @@
    <%= distance_of_time_in_words_to_now(comment.created_at)  %> 
 
 	<% if user_signed_in?%>
-	- <%= link_to "reply", post_comment_new_reply_path(:post_id => @post, :comment_id => comment.id) %> 
+
+
+	
+			<a href="<%= post_comment_new_reply_path(:post_id => @post, :comment_id => comment.id) %>" i class="icon-share" rel="tooltip" title="reply" ></a>
+	
+	
 	<% end %>
 
 	<% if user_signed_in?%>
 	<% if current_user.username == comment.user.username %>
-	<%= link_to "edit", edit_post_comment_path(:post_id => @post, :id => comment.id) %>
+
+	
+	
+		<a href="<%= edit_post_comment_path(:post_id => @post, :id => comment.id) %>" i class="icon-cog" rel="tooltip" title="edit"></a>
+	
+	
 	<% end %>
 	<% end %>
 	</small></p>
-	<%= sanitize(textilize(comment.body )) %>
+
+
+	<%= sanitize(textilize(comment.body )) %> <%= comment.parent_id  %>
+	
 
 
 

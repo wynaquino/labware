@@ -1,20 +1,20 @@
 
 		
 		
-		
+
 		
 		
 
-  <div class="well"> <p><b>Welcome to Labware,</b> a place to create and share content.</p>
+  <div class="well"> <p><b>Welcome to GrntWrk,</b> a place to create and share content.</p>
 
 	
-	
+
 	
 	<% for g in @groups%>
 	<% if !(g.avatar.content_type =~ /^image/).nil? %>
 		
 		
-		<a href="<%= group_path(g)%>" rel="popover" 
+		<a href="<%= group_path(g)%>" onclick="location.href='<%=group_path(g)%>';"  rel="popover" title="<%= g.name %>"
 							data-content="<img src='<%= g.avatar.url(:med)%>'>">
 							
 							<img src="<%= g.avatar.url(:thumb)%>" class='img-polaroid'> 

@@ -24,9 +24,9 @@ body {
   padding-right: 0;
   padding-left: 0;
   margin-left: 20px;
-  float: right;
+  float: left;
   font-weight: bold;
-  color: #000;
+  color: #fff;
   text-shadow: 0 1px 0 rgba(255,255,255,.1), 0 0 30px rgba(255,255,255,.125);
   -webkit-transition: all .2s linear;
      -moz-transition: all .2s linear;
@@ -647,6 +647,11 @@ form.well {
   }
   h3 {
     margin-top: 18px;
+  }
+
+  /* icons */
+  .marketing .bs-icon {
+    margin: 0;
   }
 
   /* Adjust the jumbotron */

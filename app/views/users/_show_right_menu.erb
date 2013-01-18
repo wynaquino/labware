@@ -62,7 +62,7 @@
 						
 							
 							
-								<a href="#" rel="popover" 
+								<a href="#"  onclick="location.href='<%=group_path(g)%>';" rel="popover" title="<%= g.name%>"
 													data-content="<img src='<%= g.avatar.url(:med)%>'>"><img src="<%= g.avatar.url(:thumb)%>"> </a>
 							
 													<% end %>

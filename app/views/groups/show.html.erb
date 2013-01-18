@@ -11,9 +11,6 @@
 
 
 
-
-
-
 	
 	
 	
@@ -23,7 +20,7 @@
 
 <%= render :partial => "shared/posts", :locals => { :posts => @posts }%>
 
-
+<%= will_paginate @posts %>
 
 
 </div>

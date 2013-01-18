@@ -272,6 +272,4 @@
   , delay: 0
   }
 
-
-
 }(window.jQuery);

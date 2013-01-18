@@ -1,6 +1,6 @@
 class CommentsController < ApplicationController
-  before_filter :authenticate_user!, :except => [:index, :show]
-  before_filter :get_post, :except => [:index, :show, :destroy]
+  before_filter :authenticate_user!, :except => [:latest]
+  before_filter :get_post, :except => [:destroy]
 
  
   def new

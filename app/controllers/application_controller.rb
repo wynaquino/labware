@@ -1,6 +1,6 @@
 
 class ApplicationController < ActionController::Base
-  include UsersHelper, GroupsHelper
+  include UsersHelper, GroupsHelper, PostsHelper
   protect_from_forgery
   #test for forum
 
@@ -38,7 +38,7 @@ class ApplicationController < ActionController::Base
    
    
    def get_post
-     return @post = Post.find(params[:post_id])
+     return @post = Post.find_by_post_uuid(params[:post_id])
    end
   
     def after_sign_in_path_for(resource)
@@ -46,7 +46,7 @@ class ApplicationController < ActionController::Base
    end
 
    def check_view_access
-     @post = Post.find(params[:id])
+     @post = Post.find_by_post_uuid(params[:id])
      @group = @post.group
 
      if user_signed_in?

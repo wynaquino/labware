@@ -8,7 +8,7 @@
 	
 	<% else %>
 	
-	
+
  <% @num = posts.count%>	
 
  <% for post in posts %>	
@@ -24,18 +24,16 @@
 			<a href="<%= post.link %>" i class="icon-share" target="_blank"></a>		
 		<% end %>
 		
-		<% @pic = getPic(post.content) %>
-		
-		
+		<% @pic = getPic(post.content) %>		
 		<% if !@pic.nil? %>
-		
-			<a rel="popover" class="icon-picture"
-								data-content="<img src='<%= @pic%>' width='200' height='200'>">
+			<a rel="popover" class="icon-picture" data-content="<img src='<%= @pic%>' width='200' height='200'>">
 			</a>
-		
-		
-		
 		<% end %>
+		
+		<% if post.is_sticky %>
+					<a i class="icon-star-empty"></a>
+		<% end %>
+		
 		
 		</p>
 	</div>	
@@ -44,7 +42,12 @@
 
 	<div class="span6">
  <h3 class="title"><%= link_to post.title, group_post_path(post.group, post) %> </h3>
-	  <p><small><%= link_to post.group.name, group_path(post.group)%> | <%= distance_of_time_in_words_to_now(post.created_at)  %> ago by <%= link_to post.user.username, user_path(post.user.username) %> (<%= post.comment_threads.count %> comments)</small></p>	
+	  <p><small>
+	
+	<%= link_to post.group.name, group_path(post.group) if params[:controller] == "users"%>
+	
+	
+	<%= distance_of_time_in_words_to_now(post.created_at)  %> ago by <%= link_to post.user.username, user_path(post.user.username) %> (<%= post.comment_threads.count %> comments)</small></p>	
 	
 	</div>
 	

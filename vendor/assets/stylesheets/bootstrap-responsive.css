@@ -1,5 +1,5 @@
 /*!
- * Bootstrap Responsive v2.0.3
+ * Bootstrap Responsive v2.0.4
  *
  * Copyright 2012 Twitter, Inc
  * Licensed under the Apache License v2.0
@@ -171,7 +171,7 @@
   .row-fluid [class*="span"] {
     display: block;
     float: none;
-    width: 400;
+    width: auto;
     margin-left: 0;
   }
   .input-large,
@@ -238,9 +238,6 @@
   .span7 {
     width: 414px;
   }
-  .span7a {
-    width: 450px;
-  }
   .span6 {
     width: 352px;
   }
@@ -259,15 +256,6 @@
   .span1 {
     width: 42px;
   }
-
-.span1-1 {
-    width: 42px;
-  }
-
-.span1a {
-    width: 22px;
-  }
-
   .offset12 {
     margin-left: 764px;
   }
@@ -540,18 +528,6 @@
   .offset1 {
     margin-left: 130px;
   }
-
-  .offset1-1 {
-  margin-left: 20px;
-}
-
-.offset2-1 {
-  margin-left: 230px;
-}
-
-.pcomment { border-left: 1px dotted gray; padding-left: 5px; ; padding-bottom: 5px;}
-
-
   .row-fluid {
     width: 100%;
     *zoom: 1;
@@ -707,11 +683,18 @@
   body {
     padding-top: 0;
   }
-  .navbar-fixed-top {
+  .navbar-fixed-top,
+  .navbar-fixed-bottom {
     position: static;
+  }
+  .navbar-fixed-top {
     margin-bottom: 18px;
   }
-  .navbar-fixed-top .navbar-inner {
+  .navbar-fixed-bottom {
+    margin-top: 18px;
+  }
+  .navbar-fixed-top .navbar-inner,
+  .navbar-fixed-bottom .navbar-inner {
     padding: 5px;
   }
   .navbar .container {

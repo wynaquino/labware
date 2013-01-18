@@ -21,7 +21,7 @@
 	<% if params[:controller] == 'groups'%>
       <ul class="dropdown-menu">
         <li><a href="<%= group_path(@group)%>">Posts (recent)</a></li>
-        <li><a href="<%=group_group_posts_latest_comment_path(@group.name.downcase)%>">Posts (latest comment)</a></li>
+        <li><a href="<%=group_group_posts_latest_comment_path(@group.url.downcase)%>">Posts (latest comment)</a></li>
       </ul>
 	<% end%>
 
@@ -33,7 +33,7 @@
 
 
 <% if !@group.nil? %>
-<%=link_to "New post", new_group_post_path(@group.id), :class => "btn btn-small" %>
+<%=link_to "New post", new_group_post_path(@group), :class => "btn btn-small" %>
 
 
 
@@ -45,9 +45,9 @@
 	<% if @subscription.nil? %>
 
 		<%=link_to "Subscribe", group_subscriptions_path(@group.id), :class => "btn btn-small", :method => "post" %>
-		<% end %>
+	<% end %>
 		
-		<% if  !@subscription.nil? %>
+	<% if  !@subscription.nil? %>
 		
 		<%=link_to "Unsubscribe", group_subscription_path(@subscription.id, @subscription.id), :class => "btn btn-small", :method => "delete", :confirm => "Unsubscribe to group?" %>
 	<% end %>

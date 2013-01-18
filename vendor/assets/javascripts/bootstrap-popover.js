@@ -1,5 +1,5 @@
 /* ===========================================================
- * bootstrap-popover.js v2.0.3
+ * bootstrap-popover.js v2.0.4
  * http://twitter.github.com/bootstrap/javascript.html#popovers
  * ===========================================================
  * Copyright 2012 Twitter, Inc.
@@ -77,8 +77,6 @@
  /* POPOVER PLUGIN DEFINITION
   * ======================= */
 
-
-
   $.fn.popover = function (option) {
     return this.each(function () {
       var $this = $(this)
@@ -96,7 +94,5 @@
   , content: ''
   , template: '<div class="popover"><div class="arrow"></div><div class="popover-inner"><h3 class="popover-title"></h3><div class="popover-content"><p></p></div></div></div>'
   })
-
-
 
 }(window.jQuery);

@@ -20,10 +20,8 @@ class AssetsController < ApplicationController
       if @asset.save
         @asset = Asset.new
         format.html { redirect_to user_assets_path(current_user.username) , notice: 'Asset was successfully created.' }
-        format.json { render json: @asset, status: :created, location: @asset }
       else
         format.html { render action: "new" }
-        format.json { render json: @asset.errors, status: :unprocessable_entity }
       end
     end
   end

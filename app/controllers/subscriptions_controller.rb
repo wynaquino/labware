@@ -9,7 +9,6 @@ class SubscriptionsController < ApplicationController
     respond_to do |format|
       if @subscription.save
         format.html { redirect_to group_path(@subscription.group), notice: 'Subscription was successfully created.' }
-        format.json { render json: @subscription, status: :created, location: @subscription }
       end
      end
   end

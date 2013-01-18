@@ -13,7 +13,9 @@
 			
 			<% if user_signed_in? %>
 			<% if @group.user_id == current_user.id %>
-					(<%= link_to "edit", edit_group_path(@group) %>)
+					
+								<a href="<%= edit_group_path(@group) %>" i class="icon-cog" rel="tooltip" title="edit" ></a>
+					
 			<% end %>
 			<% end %>
 			
