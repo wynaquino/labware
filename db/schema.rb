@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121028175256) do
+ActiveRecord::Schema.define(:version => 20130119101332) do
 
   create_table "assets", :force => true do |t|
     t.datetime "created_at",                         :null => false
@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(:version => 20121028175256) do
     t.integer  "rgt"
     t.datetime "created_at",                       :null => false
     t.datetime "updated_at",                       :null => false
+    t.integer  "vote_count",       :default => 0
   end
 
   add_index "comments", ["commentable_id"], :name => "index_comments_on_commentable_id"
@@ -77,6 +78,7 @@ ActiveRecord::Schema.define(:version => 20121028175256) do
     t.string   "link",            :default => ""
     t.datetime "post_updated_at"
     t.string   "post_uuid"
+    t.integer  "vote_count",      :default => 0
   end
 
   add_index "posts", ["group_id"], :name => "index_posts_on_group_id"
@@ -114,5 +116,18 @@ ActiveRecord::Schema.define(:version => 20121028175256) do
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
+
+  create_table "votes", :force => true do |t|
+    t.integer  "votable_id"
+    t.string   "votable_type"
+    t.integer  "voter_id"
+    t.string   "voter_type"
+    t.boolean  "vote_flag"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
+
+  add_index "votes", ["votable_id", "votable_type"], :name => "index_votes_on_votable_id_and_votable_type"
+  add_index "votes", ["voter_id", "voter_type"], :name => "index_votes_on_voter_id_and_voter_type"
 
 end

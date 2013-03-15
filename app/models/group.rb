@@ -1,7 +1,7 @@
 class Group < ActiveRecord::Base
     acts_as_url :name
   
-    has_attached_file :avatar, :styles => {:med => "300x300>", :thumb => "30x30>" }
+    has_attached_file :avatar, :styles => {:med => "300x300>", :thumb => "30x30>", :fmed => "125x125>" }
   
   
     attr_accessible :about, :name, :is_private, :created_at, :updated_at, :user_id, :frontpage, :avatar

@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   
-  before_filter :authenticate_user!, :except => [:show, :latest_comments, :oldest_comments]
+  before_filter :authenticate_user!, :except => [:show, :latest_comments, :oldest_comments, :highest_voted_comments]
   before_filter :check_view_access, :only => [:show]
   
   def show
@@ -11,6 +11,8 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new
+    @group = Group.find_by_url(params[:group_id])
+   
   end
 
   # GET /posts/1/edit

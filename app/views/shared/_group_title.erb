@@ -1,15 +1,15 @@
 	        <div class="well"> 
 
-<% if !(@group.avatar.content_type =~ /^image/).nil? %>
-<img src="<%= @group.avatar.url(:med)%>" class="img-polaroid">
-<% end %>
+
 
 
 				<h2><%= link_to @group.name, group_path(@group) %>		
 
 
 		</h2>	<p><small> <%= link_to @group.user.username, user_path(@group.user.username) %> created group <%= distance_of_time_in_words_to_now(@group.created_at)  %> ago  
-			
+			<% if !(@group.avatar.content_type =~ /^image/).nil? %>
+			<img src="<%= @group.avatar.url(:med)%>" class="img-polaroid">
+			<% end %>
 			
 			<% if user_signed_in? %>
 			<% if @group.user_id == current_user.id %>

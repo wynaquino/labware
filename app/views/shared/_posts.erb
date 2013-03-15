@@ -21,18 +21,19 @@
 		
 		<% if !post.link.blank? %>
 
-			<a href="<%= post.link %>" i class="icon-share" target="_blank"></a>		
+			<a href="<%= post.link %>" i class="icon-share" target="_blank" rel="tooltip" title="<%= post.link %>"></a>
+
 		<% end %>
-		
+		<% if post.is_sticky %>
+				<span class="label label-info">	<a i class="icon-star-empty"></a></span>
+		<% end %>
 		<% @pic = getPic(post.content) %>		
 		<% if !@pic.nil? %>
 			<a rel="popover" class="icon-picture" data-content="<img src='<%= @pic%>' width='200' height='200'>">
 			</a>
 		<% end %>
 		
-		<% if post.is_sticky %>
-					<a i class="icon-star-empty"></a>
-		<% end %>
+
 		
 		
 		</p>
@@ -41,13 +42,18 @@
 
 
 	<div class="span6">
- <h3 class="title"><%= link_to post.title, group_post_path(post.group, post) %> </h3>
+ <h3 class="title"> <%= link_to post.title, group_post_path(post.group, post) %> 		</h3>
 	  <p><small>
 	
 	<%= link_to post.group.name, group_path(post.group) if params[:controller] == "users"%>
 	
 	
-	<%= distance_of_time_in_words_to_now(post.created_at)  %> ago by <%= link_to post.user.username, user_path(post.user.username) %> (<%= post.comment_threads.count %> comments)</small></p>	
+	<%= distance_of_time_in_words_to_now(post.created_at)  %> ago by <%= link_to post.user.username, user_path(post.user.username) %> <a class="icon-comment-f"></a> <%= post.comment_threads.count %> 
+	  <a class="icon-thumbs-up-f" rel="tooltip" data-method="post" href="<%=post_vote_path(post)%>" data-original-title="give a thumbs up"></a>
+
+
+
+			<small> <%=post.upvotes.size%></small></small></p>	
 	
 	</div>
 	

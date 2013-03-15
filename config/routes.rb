@@ -1,38 +1,61 @@
 Labware::Application.routes.draw do
 
- match '/contact' => 'public#contact'
- match '/about' => 'public#about'
- match '/privacy' => 'public#privacy'
- root :to => "public#index"
+
+   match '/contact' => 'public#contact'
+   match '/about' => 'public#about'
+   match '/privacy' => 'public#privacy'
+   root :to => "public#index"
+
+
+   devise_for :users, :layout => "devise"
+
+    resources :users, :path => 'u', :except => [:index, :create, :new]  do
+        get "comments/latest" => "users#comments_latest"
+        get "posts/latest_comment" => "users#posts_latest_comment"
+        resources :assets, :except => [:edit, :update]
+    end
+
+
+
+
+
+    resources :posts, :except => [:index,:new, :show,:edit, :update] do
+      post "replies" => "comments#create_reply", :as => "create_reply"
+      resources :comments, :except => [:index] do
+          post "replies" => "comments#create_reply", :as => "create_reply"
+          get "replies/new" => "comments#new_reply", :as => "new_reply" 
+        
+          resource :vote, :except => [:index, :edit, :show, :update, :new, :create] do          
+            post "vote" => "votes#create_comment_vote", :as => "comment"
+          end       
+          #get "latest", "oldest", :on => :collection
+      end
+      resource :vote, :only => [:create] 
+      
+    end
  
- devise_for :users, :layout => "devise"
+  
+  
+    resources :groups, :path => 'g',:except => [:index] do
 
-  resources :users, :path => 'u', :except => [:index, :create, :new]  do
-      get "comments/latest" => "users#comments_latest"
-      get "posts/latest_comment" => "users#posts_latest_comment"
-      resources :assets, :except => [:edit, :update]
-  end
 
-  resources :groups, :path => 'g' do
-    resources :posts, :path => 'p', :except => [:index] do
-      get "latest_comments" => "posts#latest_comments"
-      get "oldest_comments" => "posts#oldest_comments"
-      get "highest_voted_comments" => "posts#highest_voted_comments"
+      
+      resources :posts, :path => 'p', :except => [:index] do
+
+        get "latest_comments" => "posts#latest_comments"
+        get "oldest_comments" => "posts#oldest_comments"
+        get "highest_voted_comments" => "posts#highest_voted_comments"
+       #post "thumbs_up" => "vote#create", :as => "thumbs_up"       
+      end
+      get "group_posts_latest_comment" => "groups#group_posts_latest_comment"
+      get "group_posts_most_voted" => "groups#group_posts_most_voted"
+      
+      resources :subscriptions, :except => [:index, :edit, :show, :update, :new] 
     end
-    resources :subscriptions, :except => [:index, :edit, :show, :update, :new]
-  end
-  
-  resources :posts, :except => [:index] do
-    resources :comments, :except => [:index, :show] do
-        post "replies" => "comments#create_reply", :as => "create_reply"
-        get "replies/new" => "comments#new_reply", :as => "new_reply"        
-        #get "latest", "oldest", :on => :collection
-    end
-  end
-  
-  
-  
 
+
+  
+  
   
   # The priority is based upon order of creation:
   # first created -> highest priority.

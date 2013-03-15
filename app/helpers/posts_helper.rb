@@ -20,7 +20,6 @@ module PostsHelper
   def latest_comments
     @group = Group.find_by_url(params[:group_id])
     @post = Post.find_by_post_uuid(params[:post_id])  
-    #@post.root_comments.order("created_at DESC")!
     @comments = @post.root_comments.order("created_at DESC")
     render "show"
   end
@@ -28,7 +27,6 @@ module PostsHelper
   def oldest_comments
     @group = Group.find_by_url(params[:group_id])
     @post = Post.find_by_post_uuid(params[:post_id])  
-    #@post.root_comments.order("created_at DESC")!
     @comments = @post.root_comments.order("created_at ASC")
     render "show"
   end
@@ -36,8 +34,7 @@ module PostsHelper
   def highest_voted_comments
     @group = Group.find_by_url(params[:group_id])
     @post = Post.find_by_post_uuid(params[:post_id])  
-    #@post.root_comments.order("created_at DESC")!
-    @comments = @post.root_comments.order("created_at ASC")
+    @comments = @post.root_comments.order("vote_count DESC")
     render "show"
   end
   

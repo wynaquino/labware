@@ -3,7 +3,7 @@ class Post < ActiveRecord::Base
   
   validates_uniqueness_of :post_uuid
   
-  
+  acts_as_votable
   acts_as_commentable
       attr_accessible :title, :content, :is_private, :is_draft, :is_locked, :is_sticky, :user_id, :group_id, :created_at, :updated_at, :link, :post_uuid
   

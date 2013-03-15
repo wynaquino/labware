@@ -3,7 +3,6 @@
 <div class="btn-group">
 
 
-	 <button class="btn dropdown-toggle btn-small" data-toggle="dropdown">Filter posts <span class="caret"></span></button>
 
 
 
@@ -11,6 +10,8 @@
 
 
 	<% if params[:controller] == 'users'%>
+	 <button class="btn dropdown-toggle btn-small" data-toggle="dropdown"><%=@user.username%>'s filter <span class="caret"></span></button>
+	
       <ul class="dropdown-menu">
         <li><a href="<%= user_path(@user.username) %>">Posts (recent)</a></li>
         <li><a href="<%=user_posts_latest_comment_path(@user.username)%>">Posts (latest comment)</a></li>
@@ -19,9 +20,13 @@
 	<% end%>
 
 	<% if params[:controller] == 'groups'%>
+	 <button class="btn dropdown-toggle btn-small" data-toggle="dropdown">Filter posts <span class="caret"></span></button>
+	
       <ul class="dropdown-menu">
         <li><a href="<%= group_path(@group)%>">Posts (recent)</a></li>
         <li><a href="<%=group_group_posts_latest_comment_path(@group.url.downcase)%>">Posts (latest comment)</a></li>
+        <li><a href="<%=group_group_posts_latest_comment_path(@group.url.downcase)%>">Most Voted </a></li>
+
       </ul>
 	<% end%>
 
@@ -33,7 +38,11 @@
 
 
 <% if !@group.nil? %>
-<%=link_to "New post", new_group_post_path(@group), :class => "btn btn-small" %>
+<%=link_to "New post", new_group_post_path(@group), :class => "btn btn-small"  %>
+
+
+
+
 
 
 

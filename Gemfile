@@ -13,7 +13,7 @@ gem 'awesome_nested_set'
 gem 'acts_as_commentable_with_threading'
 gem 'paperclip', '~> 3.0'
 gem 'base32-crockford', :require => 'base32/crockford'
-
+gem "acts_as_votable", "~> 0.3.1"
 group :development do
   gem 'sqlite3', '1.3.5'
   gem 'annotate', '~> 2.4.1.beta'

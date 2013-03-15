@@ -10,5 +10,16 @@
 
 
 
-<%= link_to 'Destroy', group_path(:id => @group.id), confirm: 'Are you sure?', method: :delete %>
 
+<div class="accordion-group">
+     <div class="accordion-heading">
+       <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseThree">
+         Delete group?
+       </a>
+     </div>
+     <div id="collapseThree" class="accordion-body collapse">
+       <div class="accordion-inner">
+         <%= link_to 'Click this to delete. This is irreversible!', group_path(:id => @group.id), confirm: 'Final chance', method: :delete %>
+       </div>
+     </div>
+   </div>

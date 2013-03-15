@@ -9,8 +9,11 @@
  <h3 class="title">	
 
 
-			
+				
 <% if !@post.link.blank? %>
+
+
+
 
 			<a href="<%= @post.link %>" i class="icon-share" target="_blank"></a>
 			
@@ -18,14 +21,27 @@
 		<% end %>
 		
 		
-		<%= link_to @post.title, group_post_path(params[:group_id], @post) %> 	</h3>
+		<%= link_to @post.title, group_post_path(params[:group_id], @post) %> 		
+		
+
+		
+				
+
+		
+		
+		</h3>
 	  <p>			<small>
 		
-		<%= link_to "", :back, :class=> "icon-step-backward", :title=> "go back", :rel => "tooltip" %>
+		<%= link_to "", :back, :class=> "icon-circle-arrow-left", :title=> "go back", :rel => "tooltip" %>
 		
 	
 		
-	<%= link_to @post.group.name, group_path(@post.group)%>    <%= distance_of_time_in_words_to_now(@post.created_at)  %> ago by <%= link_to @post.user.username, user_path(@post.user.username) %> 
+	<%= link_to @post.group.name, group_path(@post.group)%>    <%= distance_of_time_in_words_to_now(@post.created_at)  %> ago by <%= link_to @post.user.username, user_path(@post.user.username) %> 	<a class="icon-comment-f"></a> <%= @post.comment_threads.count %> 
+		  <a class="icon-thumbs-up-f"></a>
+
+
+
+				<small> <%=@post.upvotes.size%></small>
 		
 		
 		<% if user_signed_in? %>
@@ -67,7 +83,38 @@
 
 		     	<%= render 'shared/group_title'%>
 			
+				<div class="btn-toolbar">
+						<div class="btn-group">
+					   		<a class="btn btn-small" data-method="post" href="<%=post_vote_path(@post)%>"><i class="icon-thumbs-up" ></i>Thumbs Up </a>
+
+
+					</div>
+
+
+				   <div class="btn-group">
+
+
+
+
+
+				<a class="btn btn-small" >Filter</a>
+				       <a class="btn btn-small dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"></span></a>
+				       <ul class="dropdown-menu">
+				         <li><%= link_to "latest comments", group_post_latest_comments_path(:group_id => @post.group, :post_id => @post) %></li>
+				          <li><%= link_to "oldest comments", group_post_oldest_comments_path(:group_id => @post.group, :post_id => @post) %></li>
+				          <li><%= link_to "highest voted comments", group_post_highest_voted_comments_path(:group_id => @post.group, :post_id => @post) %></li>       </ul>
 				
+				</div>
+
+				   <div class="btn-group">
+
+<a class="btn btn-small" href="<%=new_post_comment_path(@post.post_uuid)%>"><i class="icon-comment" ></i>Leave Comment </a>
+</div>
+
+
+
+
+				</div>
 				
 
 				

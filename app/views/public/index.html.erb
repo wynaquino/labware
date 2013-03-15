@@ -1,41 +1,49 @@
 
 		
-		
-
-		
-		
-
-  <div class="well"> <p><b>Welcome to GrntWrk,</b> a place to create and share content.</p>
 
 	
+	<div class="span7">
+      <h2>Sections</h2>
+      <p>Different sections. Check them out.</p>
+      <ul class="thumbnails">
+       
 
-	
-	<% for g in @groups%>
-	<% if !(g.avatar.content_type =~ /^image/).nil? %>
+		<% for g in @groups%>
+		<% if !(g.avatar.content_type =~ /^image/).nil? %>
+
+
+
+
+	        <li class="span2">
+				<a  class="thumbnail" href="<%= group_path(g)%>" onclick="location.href='<%=group_path(g)%>';"  rel="popover" title="<%= g.name %>"
+									data-content="<img src='<%= g.avatar.url(:med)%>'>">
+
+									<img src="<%= g.avatar.url(:fmed)%>" class='img-polaroid'> 
+				</a>
+	        </li>
+
+
+
+		<% end %>
+		<% end %>
+
+
+
+
+
+      </ul>
+    </div>
 		
-		
-		<a href="<%= group_path(g)%>" onclick="location.href='<%=group_path(g)%>';"  rel="popover" title="<%= g.name %>"
-							data-content="<img src='<%= g.avatar.url(:med)%>'>">
-							
-							<img src="<%= g.avatar.url(:thumb)%>" class='img-polaroid'> 
-		</a>	
-	
-	
-	<% end %>
-	<% end %>
-	
-	
 	</div>
 
-	
-	
 
-	
-	
-	
-	
-	
-	</div>
+ <div class="row">
+			<div class="span4"> 
+					        <div class="well">	<h2>Welcome to gruntly 	</h2><p>Feel free to controbute...Just tarting controbute...Just tartingcontrobute...Just tartingcontrobute...Just tartingcontrobute...Just tartingcontrobute...Just tartingcontrobute...Just tartingcontrobute...Just tartingcontrobute...Just tartingcontrobute...Just tartingcontrobute...Just tarting </p>
+						</div>
+				</div>
+	        </div>
+	        
 
 
    

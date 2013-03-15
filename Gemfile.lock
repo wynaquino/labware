@@ -33,6 +33,8 @@ GEM
       activerecord (>= 3.0)
       activesupport (~> 3.0)
       awesome_nested_set (>= 2.0)
+    acts_as_votable (0.3.1)
+      rails (>= 3.0.0)
     addressable (2.2.8)
     annotate (2.4.1.beta1)
     arel (3.0.2)
@@ -214,6 +216,7 @@ PLATFORMS
 DEPENDENCIES
   RedCloth
   acts_as_commentable_with_threading
+  acts_as_votable (~> 0.3.1)
   annotate (~> 2.4.1.beta)
   awesome_nested_set
   base32-crockford

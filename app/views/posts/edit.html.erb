@@ -4,8 +4,22 @@
 
 <%= render 'form', :f => f %>
 
-<% end %>
+
+<div class="accordion-group">
+     <div class="accordion-heading">
+       <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapse3">
+         Delete post?
+       </a>
+     </div>
+     <div id="collapse3" class="accordion-body collapse">
+       <div class="accordion-inner">
+        	 <%= link_to "Delete. No turning back!", group_post_path(params[:group_id], @post.post_uuid), :method => "delete",  :confirm => "This post will be deleted. Are you sure?"%>
+		<% end %>
+       </div>
+     </div>
+   </div>
 
 
 
-         <%= link_to "Delete", group_post_path(params[:group_id], @post.post_uuid), :method => "delete",  :confirm => "This post will be deleted. Are you sure?"%>
+
+        

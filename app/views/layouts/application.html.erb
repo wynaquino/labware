@@ -7,7 +7,7 @@
 
   <%= stylesheet_link_tag "bootstrap", "bootstrap-responsive", "docs", "prettify" %>
 
-  <%= javascript_include_tag  "application", "jquery", "google-code-prettify/prettify", "bootstrap-transition", "bootstrap-modal","bootstrap-dropdown", "bootstrap-tab", "bootstrap-scrollspy", "bootstrap-alert", "bootstrap-tooltip",  "bootstrap-typeahead", "bootstrap-carousel", "bootstrap-button",   "bootstrap-alert", "bootstrap-transition", "bootstrap-typeahead", "bootstrap-popover", "application1" %>
+  <%= javascript_include_tag  "application", "jquery", "google-code-prettify/prettify", "bootstrap-transition", "bootstrap-modal","bootstrap-dropdown", "bootstrap-tab", "bootstrap-scrollspy", "bootstrap-alert", "bootstrap-tooltip",  "bootstrap-typeahead", "bootstrap-carousel", "bootstrap-button",   "bootstrap-alert", "bootstrap-transition", "bootstrap-typeahead", "bootstrap-popover", "application1", "bootstrap-collapse" %>
     <!-- Le styles -->
 
 	<%= csrf_meta_tag %>
@@ -20,6 +20,9 @@
      .click(function(e) { 
             e()
      })
+  });
+  $(function () {
+      $("[rel='tooltip']").tooltip();
   });
  </script>
 
