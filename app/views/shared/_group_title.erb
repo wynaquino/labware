@@ -6,18 +6,18 @@
 				<h2><%= link_to @group.name, group_path(@group) %>		
 
 
-		</h2>	<p><small> <%= link_to @group.user.username, user_path(@group.user.username) %> created group <%= distance_of_time_in_words_to_now(@group.created_at)  %> ago  
+		</h2>	<p><small> <%= link_to @group.user.username, user_path(@group.user.username) %> created group <%= distance_of_time_in_words_to_now(@group.created_at)  %> ago  			<% if user_signed_in? %>
+					<% if @group.user_id == current_user.id %>
+
+										<a href="<%= edit_group_path(@group) %>" i class="icon-cog" rel="tooltip" title="edit" ></a>
+
+					<% end %>
+					<% end %>
 			<% if !(@group.avatar.content_type =~ /^image/).nil? %>
 			<img src="<%= @group.avatar.url(:med)%>" class="img-polaroid">
 			<% end %>
 			
-			<% if user_signed_in? %>
-			<% if @group.user_id == current_user.id %>
-					
-								<a href="<%= edit_group_path(@group) %>" i class="icon-cog" rel="tooltip" title="edit" ></a>
-					
-			<% end %>
-			<% end %>
+
 			
 			
 			
@@ -25,6 +25,18 @@
 			</small></p>
 				
 				<p><%= raw(textilize(@group.about))%></p>
+				
+			
+		</div>
+		
+		
+		    <div class="well"> 
+
+
+
+
+				<h2> <%= @group.posts.count %> Posts  </h2>
+				<h2> <%= @group.subscriptions.count %> Subscribers  </h2>
 				
 			
 		</div>
