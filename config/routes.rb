@@ -1,12 +1,15 @@
 Labware::Application.routes.draw do
 
 
+
+
    match '/contact' => 'public#contact'
    match '/about' => 'public#about'
    match '/privacy' => 'public#privacy'
    root :to => "public#index"
 
 
+   
    devise_for :users, :layout => "devise"
 
     resources :users, :path => 'u', :except => [:index, :create, :new]  do
@@ -35,7 +38,6 @@ Labware::Application.routes.draw do
     end
  
   
-  
     resources :groups, :path => 'g',:except => [:index] do
 
 
@@ -54,8 +56,11 @@ Labware::Application.routes.draw do
     end
 
 
+    devise_for :admin_users, ActiveAdmin::Devise.config
+    ActiveAdmin.routes(self)
+    root to: "admin/dashboard#index"
   
-  
+
   
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -112,5 +117,4 @@ Labware::Application.routes.draw do
 
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
-  # match ':controller(/:action(/:id))(.:format)'
 end

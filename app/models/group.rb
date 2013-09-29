@@ -4,7 +4,7 @@ class Group < ActiveRecord::Base
     has_attached_file :avatar, :styles => {:med => "300x300>", :thumb => "30x30>", :fmed => "125x125>" }
   
   
-    attr_accessible :about, :name, :is_private, :created_at, :updated_at, :user_id, :frontpage, :avatar
+    attr_accessible :about, :name, :is_private, :created_at, :updated_at, :user_id, :frontpage, :avatar #, :admin
     
     validates :name, :presence => true, :uniqueness => true, :length => {:within => 3..50 }
     
